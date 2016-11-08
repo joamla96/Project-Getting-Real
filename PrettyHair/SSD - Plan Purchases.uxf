@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>14</zoom_level>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>630</x>
+      <y>308</y>
+      <w>140</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>_:System_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>686</x>
+      <y>336</y>
+      <w>42</w>
+      <h>686</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;470.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>280</x>
+      <y>210</y>
+      <w>112</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>Purchaser</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>322</x>
+      <y>336</y>
+      <w>42</w>
+      <h>686</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;470.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>322</x>
+      <y>392</y>
+      <w>406</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>getStockLevels()
+lt=-&gt;&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;270.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>322</x>
+      <y>434</y>
+      <w>406</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>stockLevels
+lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;20.0;270.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>98</x>
+      <y>490</y>
+      <w>644</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>For each
+Low Stock Level</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>322</x>
+      <y>504</y>
+      <w>406</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>OrderNewWare(Ware, Quan, Rush)
+lt=-&gt;&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;270.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>98</x>
+      <y>630</y>
+      <w>644</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>X Times a Day</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>322</x>
+      <y>630</y>
+      <w>406</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Check Emails
+lt=-&gt;&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;270.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>322</x>
+      <y>672</y>
+      <w>406</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Emails
+lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;20.0;270.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>112</x>
+      <y>728</y>
+      <w>616</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>Foreach Email about
+order not furfilled</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>322</x>
+      <y>742</y>
+      <w>406</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>OrderNewWare(Ware, Quan, Rush)
+lt=-&gt;&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;270.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>826</x>
+      <y>280</y>
+      <w>504</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>For each 
+Stock</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>826</x>
+      <y>350</y>
+      <w>504</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>If Level
+is Low</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>532</x>
+      <y>0</y>
+      <w>798</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>*PrettyHair*
+Plan purchases
+--
+Each day the purchaser pulls a stock list from the system. 
+The purchaser goes over the list and checks whether there are wares that are running low,
+so as to order new wares.
+The purchaser checks his email several times a day,
+to see if the system has sent any mails regarding orders that cannot be fulfilled, 
+due to stock shortages in the warehouse.
+When this type of mail is received,
+a rushed purchase order is placed.
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
