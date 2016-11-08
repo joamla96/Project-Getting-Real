@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>120</y>
+      <w>200</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Customers
+--
+ID: Int
+Name: String
+Type: Enum[Client, Business]
+Address: String
+Phone: String
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>270</x>
+      <y>120</y>
+      <w>210</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Employee
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>120</y>
+      <w>190</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Tasks
+--
+ID: Int
+Date: Datetime2
+^^ Date For completion
+Notes: Text
+^^ Notes specific to task</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1000</x>
+      <y>120</y>
+      <w>250</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Services
+--
+ID: Int
+Info: Text
+^^ Information about specific service</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>730</x>
+      <y>120</y>
+      <w>250</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>TaskServices
+--
+TaskID
+ServiceID</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>730</x>
+      <y>200</y>
+      <w>250</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>TaskEmployees
+--
+TaskID
+EmployeeID
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1110</x>
+      <y>310</y>
+      <w>170</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>ProgramSettings
+--
+Locale: Char(4)</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

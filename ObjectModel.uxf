@@ -4,13 +4,13 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>20</x>
-      <y>130</y>
+      <x>150</x>
+      <y>120</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
     <panel_attributes>Jonas
-#666666
+#1
 C.H Anderson 1, 5000 Odense
 50589758
 jonas@eal.dk</panel_attributes>
@@ -19,8 +19,8 @@ jonas@eal.dk</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>50</x>
-      <y>50</y>
+      <x>180</x>
+      <y>40</y>
       <w>120</w>
       <h>30</h>
     </coordinates>
@@ -31,8 +31,8 @@ halign=center</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>390</x>
-      <y>50</y>
+      <x>520</x>
+      <y>40</y>
       <w>120</w>
       <h>30</h>
     </coordinates>
@@ -43,13 +43,13 @@ halign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>20</x>
-      <y>300</y>
+      <x>150</x>
+      <y>290</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
     <panel_attributes>Donato
-#777777
+#2
 Gågade 10, 5500 Middelfart
 5584587
 donato@eal.dk</panel_attributes>
@@ -58,13 +58,13 @@ donato@eal.dk</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>20</x>
-      <y>490</y>
+      <x>150</x>
+      <y>480</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
     <panel_attributes>Pedro
-#888888
+#3
 StoreVej 30, 7000 Frederecia
 70254588
 pedro@eal.dk</panel_attributes>
@@ -73,13 +73,13 @@ pedro@eal.dk</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>20</x>
-      <y>660</y>
+      <x>150</x>
+      <y>650</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
     <panel_attributes>Loan
-#999999
+#4
 Lykkevej 70, 6000 Kolding
 6054875
 loan@eal.dk</panel_attributes>
@@ -88,12 +88,12 @@ loan@eal.dk</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>360</x>
-      <y>140</y>
+      <x>490</x>
+      <y>130</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
-    <panel_attributes>#100500
+    <panel_attributes>#1
 Mette
 25/10/2016 8:00
 25/10/2016 10:00
@@ -103,12 +103,12 @@ Mette
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>360</x>
-      <y>300</y>
+      <x>490</x>
+      <y>290</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
-    <panel_attributes>#100500
+    <panel_attributes>#2
 Louise
 27/10/2016 8:00
 27/10/2016 16:00</panel_attributes>
@@ -117,12 +117,12 @@ Louise
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>360</x>
-      <y>500</y>
+      <x>490</x>
+      <y>490</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
-    <panel_attributes>#100500
+    <panel_attributes>#3
 Kathy
 26/10/2016 14:00
 27/10/2016 10:00</panel_attributes>
@@ -131,12 +131,12 @@ Kathy
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>360</x>
-      <y>670</y>
+      <x>490</x>
+      <y>660</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
-    <panel_attributes>#100500
+    <panel_attributes>#4
 Betty
 25/10/2016 8:00
 25/10/2016 10:00</panel_attributes>
