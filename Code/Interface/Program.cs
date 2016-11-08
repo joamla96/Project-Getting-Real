@@ -8,6 +8,7 @@ namespace Interface {
 	class Program {
 		static void Main(string[] args) {
 			Console.WriteLine("Abit too early for this one");
+			Console.WriteLine("Abit too early for this one");
 		}
 	}
 }
