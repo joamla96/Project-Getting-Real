@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>20</x>
+      <y>130</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Jonas
+#666666
+C.H Anderson 1, 5000 Odense
+50589758
+jonas@eal.dk</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>50</x>
+      <y>50</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>CustomerObject
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>390</x>
+      <y>50</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Schedule
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>20</x>
+      <y>300</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Donato
+#777777
+Gågade 10, 5500 Middelfart
+5584587
+donato@eal.dk</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>20</x>
+      <y>490</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Pedro
+#888888
+StoreVej 30, 7000 Frederecia
+70254588
+pedro@eal.dk</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>20</x>
+      <y>660</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Loan
+#999999
+Lykkevej 70, 6000 Kolding
+6054875
+loan@eal.dk</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>360</x>
+      <y>140</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#100500
+Mette
+25/10/2016 8:00
+25/10/2016 10:00
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>360</x>
+      <y>300</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#100500
+Louise
+27/10/2016 8:00
+27/10/2016 16:00</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>360</x>
+      <y>500</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#100500
+Kathy
+26/10/2016 14:00
+27/10/2016 10:00</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>360</x>
+      <y>670</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#100500
+Betty
+25/10/2016 8:00
+25/10/2016 10:00</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
