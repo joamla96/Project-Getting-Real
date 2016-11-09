@@ -11,6 +11,8 @@ Please refer to our "Domain Model" when answering the following questions.
 #REPHRASE#
 #Is Domain Model "at least a beginning"#
 
+For instance, should we add some more association about the employee´s tools and task to offer a specific service.
+
 
 Please refer to "Questiosn for interview" when answering the following question.
 
