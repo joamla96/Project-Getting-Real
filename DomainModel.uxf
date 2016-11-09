@@ -26,11 +26,11 @@ valign=top
       <x>30</x>
       <y>80</y>
       <w>180</w>
-      <h>120</h>
+      <h>160</h>
     </coordinates>
     <panel_attributes>CustomerData
 --
-Customernumber
+CustomerId
 Customername
 Customeraddress
 Customerphone
