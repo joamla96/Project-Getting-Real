@@ -1,0 +1,17 @@
+To whom it may concern
+
+Please refer to our trello board when answering the questions:
+https://trello.com/b/Pr8OOqZt
+
+When looking at our project backlog, do you feel these are broken down properly for us to start working?
+
+
+Please refer to our "Domain Model" when answering the following questions.
+
+#REPHRASE#
+#Is Domain Model "at least a beginning"#
+
+
+Please refer to "Questiosn for interview" when answering the following question.
+
+Any suggestions on further questions we could ask that would assist us creating futher artifacts?
