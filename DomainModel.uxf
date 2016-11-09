@@ -4,17 +4,18 @@
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>370</x>
-      <y>0</y>
+      <x>640</x>
+      <y>80</y>
       <w>190</w>
       <h>120</h>
     </coordinates>
-    <panel_attributes>Schedule
+    <panel_attributes>EmployeeTask
 --
-Employeename
+TaskNumber
 Date
 Startingtime
 Closingtime
+Equipment
 valign=top
 </panel_attributes>
     <additional_attributes/>
@@ -22,12 +23,12 @@ valign=top
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>50</x>
-      <y>0</y>
+      <x>30</x>
+      <y>80</y>
       <w>180</w>
       <h>120</h>
     </coordinates>
-    <panel_attributes>Customer
+    <panel_attributes>CustomerData
 --
 Customernumber
 Customername
@@ -41,28 +42,61 @@ valign=top
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>220</x>
-      <y>40</y>
-      <w>170</w>
+      <x>200</x>
+      <y>120</y>
+      <w>130</w>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=-
 m2=1..n
 m1=1..1
 </panel_attributes>
-    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>700</x>
-      <y>0</y>
+      <x>940</x>
+      <y>80</y>
       <w>190</w>
       <h>120</h>
     </coordinates>
-    <panel_attributes>Employee
+    <panel_attributes>EmployeeArea
 --
-Employeename
+EmployeeAddress
+EmployeeName
+etc...
+valign=top
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>820</x>
+      <y>120</y>
+      <w>140</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=1..n
+m1=1..n
+</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>310</x>
+      <y>80</y>
+      <w>250</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Service
+--
+ServiceCode
+ServiceType(example business or not)
+ServiceDescription
 valign=top
 </panel_attributes>
     <additional_attributes/>
@@ -71,14 +105,14 @@ valign=top
     <id>Relation</id>
     <coordinates>
       <x>550</x>
-      <y>40</y>
-      <w>170</w>
+      <y>120</y>
+      <w>110</w>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=-
 m2=1..n
 m1=1..n
 </panel_attributes>
-    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
   </element>
 </diagram>
