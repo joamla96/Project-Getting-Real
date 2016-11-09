@@ -100,8 +100,8 @@ lt=&lt;&lt;.</panel_attributes>
       <w>320</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>new Customer(id, name, address, phone, email)
-lt=&lt;&lt;.</panel_attributes>
+    <panel_attributes>newCustomer(id, name, address, phone, email)
+lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>20.0;20.0;290.0;20.0</additional_attributes>
   </element>
 </diagram>
