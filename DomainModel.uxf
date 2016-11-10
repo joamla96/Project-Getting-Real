@@ -9,13 +9,12 @@
       <w>190</w>
       <h>120</h>
     </coordinates>
-    <panel_attributes>EmployeeTask
+    <panel_attributes>EmployeeSchedule
 --
 TaskId
 Date
 StartingTime
 ClosingTime
-Equipment
 valign=top
 </panel_attributes>
     <additional_attributes/>
@@ -61,7 +60,7 @@ m1=1..1
       <w>190</w>
       <h>120</h>
     </coordinates>
-    <panel_attributes>EmployeeArea
+    <panel_attributes>Employee
 --
 EmployeeId
 EmployeeName
@@ -97,7 +96,7 @@ m1=1..n
     <panel_attributes>Service
 --
 ServiceId
-ServiceType(example business or not)
+ServiceType(Client, Business)
 ServiceDescription
 valign=top
 </panel_attributes>
