@@ -44,7 +44,7 @@ halign=center</panel_attributes>
     <id>UMLUseCase</id>
     <coordinates>
       <x>150</x>
-      <y>310</y>
+      <y>290</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
@@ -59,7 +59,7 @@ donato@edu.eal.dk</panel_attributes>
     <id>UMLUseCase</id>
     <coordinates>
       <x>150</x>
-      <y>500</y>
+      <y>460</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
@@ -73,16 +73,14 @@ pedro@edu.eal.dk</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>150</x>
-      <y>690</y>
+      <x>450</x>
+      <y>780</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
-    <panel_attributes>#10004
-Loan
-Lykkevej 70, 6000 Kolding
-6054875
-loan@edu.eal.dk</panel_attributes>
+    <panel_attributes>#20005
+Private House
+Cleaning Floor</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -103,7 +101,7 @@ loan@edu.eal.dk</panel_attributes>
     <id>UMLUseCase</id>
     <coordinates>
       <x>750</x>
-      <y>310</y>
+      <y>290</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
@@ -117,7 +115,7 @@ Louise
     <id>UMLUseCase</id>
     <coordinates>
       <x>750</x>
-      <y>500</y>
+      <y>460</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
@@ -131,14 +129,14 @@ Kathy
     <id>UMLUseCase</id>
     <coordinates>
       <x>750</x>
-      <y>690</y>
+      <y>630</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
     <panel_attributes>#4
 Betty
 25/10/2016
-10:00 - 13:15</panel_attributes>
+10:00 - 16:00</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -171,7 +169,7 @@ Cleaning Windows
     <id>UMLUseCase</id>
     <coordinates>
       <x>450</x>
-      <y>310</y>
+      <y>290</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
@@ -184,7 +182,7 @@ Cleaning Floor &amp; Kitchen</panel_attributes>
     <id>UMLUseCase</id>
     <coordinates>
       <x>450</x>
-      <y>500</y>
+      <y>460</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
@@ -197,7 +195,7 @@ Cleaning Windows</panel_attributes>
     <id>UMLUseCase</id>
     <coordinates>
       <x>450</x>
-      <y>690</y>
+      <y>630</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
@@ -237,7 +235,7 @@ betty@gmail.dk</panel_attributes>
     <id>UMLUseCase</id>
     <coordinates>
       <x>1050</x>
-      <y>310</y>
+      <y>290</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
@@ -252,7 +250,7 @@ camila@gmail.dk</panel_attributes>
     <id>UMLUseCase</id>
     <coordinates>
       <x>1050</x>
-      <y>500</y>
+      <y>460</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
@@ -267,7 +265,7 @@ mette@gmail.dk</panel_attributes>
     <id>UMLUseCase</id>
     <coordinates>
       <x>1050</x>
-      <y>690</y>
+      <y>630</y>
       <w>200</w>
       <h>130</h>
     </coordinates>
@@ -315,7 +313,7 @@ christan@gmail.dk</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>340</x>
-      <y>370</y>
+      <y>350</y>
       <w>130</w>
       <h>30</h>
     </coordinates>
@@ -326,7 +324,7 @@ christan@gmail.dk</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>640</x>
-      <y>370</y>
+      <y>350</y>
       <w>130</w>
       <h>30</h>
     </coordinates>
@@ -337,7 +335,7 @@ christan@gmail.dk</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>940</x>
-      <y>370</y>
+      <y>350</y>
       <w>130</w>
       <h>30</h>
     </coordinates>
@@ -348,7 +346,7 @@ christan@gmail.dk</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>340</x>
-      <y>560</y>
+      <y>520</y>
       <w>130</w>
       <h>30</h>
     </coordinates>
@@ -359,7 +357,7 @@ christan@gmail.dk</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>640</x>
-      <y>560</y>
+      <y>520</y>
       <w>130</w>
       <h>30</h>
     </coordinates>
@@ -370,7 +368,55 @@ christan@gmail.dk</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>940</x>
-      <y>560</y>
+      <y>520</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>940</x>
+      <y>690</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>690</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>150</x>
+      <y>650</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#10004
+Loan
+Lykkevej 70, 6000 Kolding
+6054875
+loan@edu.eal.dk</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>690</y>
       <w>130</w>
       <h>30</h>
     </coordinates>
@@ -381,33 +427,22 @@ christan@gmail.dk</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>340</x>
-      <y>750</y>
-      <w>130</w>
-      <h>30</h>
+      <y>690</y>
+      <w>140</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;120.0;120.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>640</x>
-      <y>750</y>
-      <w>130</w>
-      <h>30</h>
+      <x>630</x>
+      <y>690</y>
+      <w>140</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>940</x>
-      <y>750</y>
-      <w>130</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+    <additional_attributes>10.0;120.0;120.0;10.0</additional_attributes>
   </element>
 </diagram>
