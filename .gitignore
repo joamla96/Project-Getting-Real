@@ -273,3 +273,21 @@ __pycache__/
 
 # Cake - Uncomment if you are using it
 # tools/
+
+
+*.tmp
+
+# Word temporary
+~$*.docx*
+
+# Excel temporary
+~$*.xlsx*
+
+# Excel Backup File
+*.xlk
+
+# PowerPoint temporary
+~$*.pptx*
+
+# Visio autosave temporary files
+*.~vsdx
