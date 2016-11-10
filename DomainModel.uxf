@@ -28,13 +28,13 @@ valign=top
       <w>180</w>
       <h>160</h>
     </coordinates>
-    <panel_attributes>CustomerData
+    <panel_attributes>Customer
 --
 CustomerId
-Customername
-Customeraddress
-Customerphone
-Customeremail
+CustomerName
+CustomerAddress
+CustomerPhone
+CustomerEmail
 valign=top
 </panel_attributes>
     <additional_attributes/>
@@ -48,7 +48,7 @@ valign=top
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=-
-m2=1..n
+m2=0..n
 m1=1..1
 </panel_attributes>
     <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
@@ -65,6 +65,8 @@ m1=1..1
 --
 EmployeeAddress
 EmployeeName
+EmployeePhone
+Employee
 etc...
 valign=top
 </panel_attributes>
@@ -94,7 +96,7 @@ m1=1..n
     </coordinates>
     <panel_attributes>Service
 --
-ServiceCode
+ServiceId
 ServiceType(example business or not)
 ServiceDescription
 valign=top
