@@ -291,3 +291,6 @@ __pycache__/
 
 # Visio autosave temporary files
 *.~vsdx
+
+# LibreOffice locks
+.~lock.*#
