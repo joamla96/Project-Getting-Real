@@ -61,12 +61,12 @@ lt=&lt;&lt;-</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>220</x>
+      <x>100</x>
       <y>210</y>
-      <w>320</w>
+      <w>530</w>
       <h>190</h>
     </coordinates>
-    <panel_attributes>loop[username and password don't exist]</panel_attributes>
+    <panel_attributes>LOOP [username and password don't exist]</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
