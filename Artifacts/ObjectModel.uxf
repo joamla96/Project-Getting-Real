@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>150</x>
+      <y>120</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#10001
+Jonas
+C.H Anderson 1, 5000 Odense
+50589758
+jonas@edu.eal.dk</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>180</x>
+      <y>40</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>CustomerObject
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>760</x>
+      <y>40</y>
+      <w>170</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>EmployeeTaskObject
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>150</x>
+      <y>290</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#10002
+Donato
+Gågade 10, 5500 Middelfart
+5584587
+donato@edu.eal.dk</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>150</x>
+      <y>460</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#10003
+Pedro
+StoreVej 30, 7000 Frederecia
+70254588
+pedro@edu.eal.dk</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>450</x>
+      <y>780</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#20005
+Private House
+Cleaning Floor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>750</x>
+      <y>120</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#1
+25/10/2016
+8:00 - 11:00
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>750</x>
+      <y>290</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#2
+Louise
+27/10/2016 
+10:00 - 16:00</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>750</x>
+      <y>460</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#3
+Kathy
+26/10/2016
+10:00 - 15:45</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>750</x>
+      <y>630</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#4
+Betty
+25/10/2016
+10:00 - 16:00</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>480</x>
+      <y>40</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ServiceTypeObject
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>450</x>
+      <y>120</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#20001
+Commerical Building
+Cleaning Windows
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>450</x>
+      <y>290</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#20002
+Private House
+Cleaning Floor &amp; Kitchen</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>450</x>
+      <y>460</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#20003
+Private House
+Cleaning Windows</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>450</x>
+      <y>630</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#20004
+Commerical Building
+Cleaning Offices</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1060</x>
+      <y>40</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>EmployeeAreaObject
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1050</x>
+      <y>120</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#70001
+Betty
+Dreamy Ave. 1, 5000 Odense
+50589758
+betty@gmail.dk</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1050</x>
+      <y>290</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#70002
+Camila
+Green Blv. 1, 5500 Middelfart
+5584587
+camila@gmail.dk</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1050</x>
+      <y>460</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#70003
+Mette
+StoreVej 30, 7000 Frederecia
+70254588
+mette@gmail.dk</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1050</x>
+      <y>630</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#70004
+Christan
+LykkeligVej 70, 6000 Kolding
+6054875
+christan@gmail.dk</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>180</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>170</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>940</x>
+      <y>170</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>350</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>350</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>940</x>
+      <y>350</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>520</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>520</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>940</x>
+      <y>520</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>940</x>
+      <y>690</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>690</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>150</x>
+      <y>650</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>#10004
+Loan
+Lykkevej 70, 6000 Kolding
+6054875
+loan@edu.eal.dk</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>690</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>690</y>
+      <w>130</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>690</y>
+      <w>130</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;150.0;110.0;10.0</additional_attributes>
+  </element>
+</diagram>
