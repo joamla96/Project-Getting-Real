@@ -428,21 +428,21 @@ loan@edu.eal.dk</panel_attributes>
     <coordinates>
       <x>340</x>
       <y>690</y>
-      <w>140</w>
-      <h>140</h>
+      <w>130</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;120.0;120.0</additional_attributes>
+    <additional_attributes>10.0;10.0;110.0;150.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
+      <x>640</x>
       <y>690</y>
-      <w>140</w>
-      <h>140</h>
+      <w>130</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;120.0;120.0;10.0</additional_attributes>
+    <additional_attributes>10.0;150.0;110.0;10.0</additional_attributes>
   </element>
 </diagram>

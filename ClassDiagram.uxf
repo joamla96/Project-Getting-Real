@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>10</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>320</x>
-      <y>180</y>
-      <w>220</w>
-      <h>240</h>
+      <x>549</x>
+      <y>504</y>
+      <w>216</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>Service
 --
@@ -25,10 +25,10 @@ serviceDescription: string)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>950</x>
-      <y>180</y>
-      <w>220</w>
-      <h>240</h>
+      <x>549</x>
+      <y>207</y>
+      <w>216</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>Employee
 --
@@ -44,16 +44,17 @@ address: string,
 email: string, 
 phone: string, 
 employeeType: Enum)
-</panel_attributes>
+
+group=2</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>30</y>
-      <w>240</w>
-      <h>100</h>
+      <x>81</x>
+      <y>297</y>
+      <w>216</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>CustomerRepository
 --
@@ -62,16 +63,17 @@ Dictronary&lt;ID, Customer&gt; Customer;
 Customer GetCustomer(ID)
 bool CheckCustomer(email)
 
-</panel_attributes>
+
+group=3</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>10</x>
-      <y>180</y>
-      <w>210</w>
-      <h>230</h>
+      <x>81</x>
+      <y>441</y>
+      <w>216</w>
+      <h>207</h>
     </coordinates>
     <panel_attributes>Customer
 --
@@ -87,38 +89,40 @@ address: string,
 email: string, 
 phone: string, 
 customerType: Enum)
-</panel_attributes>
+
+group=3</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>640</x>
-      <y>180</y>
-      <w>220</w>
-      <h>240</h>
+      <x>1017</x>
+      <y>423</y>
+      <w>216</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>Schedule
 --
 TaskId: int
 Date: string
-StartingTime: string
-ClosingTime: string
+StartTime: string
+FinishTime: string
 --
 Employee(taskId: int, date: string, 
 startingTime: string, 
 closingTime: string)
 
-</panel_attributes>
+
+group=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>30</y>
-      <w>240</w>
-      <h>100</h>
+      <x>549</x>
+      <y>63</y>
+      <w>216</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>EmployeeRepository
 --
@@ -127,16 +131,17 @@ Dictronary&lt;ID, Employee&gt; Employee;
 GetEmployee(ID): Employee 
 CheckEmployee(ID): bool
 
-</panel_attributes>
+
+group=2</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>820</x>
-      <y>30</y>
-      <w>280</w>
-      <h>100</h>
+      <x>1017</x>
+      <y>279</y>
+      <w>216</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>ScheduleRepository
 --
@@ -145,7 +150,89 @@ Dictronary&lt;ID, Schedule&gt; Schedules;
 GetSchedule(SheduleId: int): Schedule 
 SsveSchedule(Schedule):
 
-</panel_attributes>
+
+group=1</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>378</y>
+      <w>45</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+group=3</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>144</y>
+      <w>45</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..n
+group=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1116</x>
+      <y>360</y>
+      <w>45</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>756</x>
+      <y>540</y>
+      <w>279</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=1..n</panel_attributes>
+    <additional_attributes>10.0;10.0;290.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>540</y>
+      <w>279</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=0..n</panel_attributes>
+    <additional_attributes>10.0;10.0;290.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>414</y>
+      <w>45</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=0..n</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
 </diagram>
