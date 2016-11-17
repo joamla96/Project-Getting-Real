@@ -28,8 +28,12 @@ namespace Core {
 			return EmpList;
 		}
 
-		public void SaveEmloyee(Employee Emp) {
+		public void SaveEmployee(Employee Emp) {
+			if(Employees.ContainsKey(Emp.ID)) {
+				Employees.Remove(Emp.ID);
+			}
 
+			Employees.Add(Emp.ID, Emp);
 		}
 	}
 }
