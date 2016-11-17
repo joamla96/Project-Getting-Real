@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core {
 	public class EmployeeRepository {
-		Dictionary<int, Employee> Employees = new Dictionary<int, Employee>();
+		private Dictionary<int, Employee> Employees = new Dictionary<int, Employee>();
 
 		public Employee Login(string Username, string Password) {
 			foreach(KeyValuePair<int, Employee> A in Employees) {
@@ -29,11 +29,11 @@ namespace Core {
 		}
 
 		public void SaveEmployee(Employee Emp) {
-			if(Employees.ContainsKey(Emp.ID)) {
-				Employees.Remove(Emp.ID);
+			if (this.Employees.ContainsKey(Emp.ID)) {
+				this.Employees.Remove(Emp.ID);
 			}
 
-			Employees.Add(Emp.ID, Emp);
+			this.Employees.Add(Emp.ID, Emp);
 		}
 	}
 }
