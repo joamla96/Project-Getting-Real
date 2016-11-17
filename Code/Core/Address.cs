@@ -12,5 +12,21 @@ namespace Core {
 		public string Streetname { get; set; }
 		public string City { get; set; }
 		public int PostalCode { get; set; }
+
+		public Address(int housenr, int floornr, string enterance, string streetname, int postalcode, string city) {
+			this.HouseNr = housenr;
+			this.FloorNr = floornr;
+			this.Enterance = enterance;
+			this.Streetname = streetname;
+			this.City = city;
+			this.PostalCode = postalcode;
+		}
+
+		public Address(int housenr, string streetname, int postalcode, string city) {
+			this.HouseNr = housenr;
+			this.Streetname = streetname;
+			this.City = city;
+			this.PostalCode = postalcode;
+		}
 	}
 }
