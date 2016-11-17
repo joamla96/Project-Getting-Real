@@ -5,7 +5,7 @@
     <id>UMLGeneric</id>
     <coordinates>
       <x>416</x>
-      <y>221</y>
+      <y>182</y>
       <w>130</w>
       <h>39</h>
     </coordinates>
@@ -16,7 +16,7 @@
     <id>Relation</id>
     <coordinates>
       <x>468</x>
-      <y>247</y>
+      <y>208</y>
       <w>39</w>
       <h>91</h>
     </coordinates>
@@ -27,7 +27,7 @@
     <id>UMLGeneric</id>
     <coordinates>
       <x>468</x>
-      <y>312</y>
+      <y>273</y>
       <w>26</w>
       <h>234</h>
     </coordinates>
@@ -38,7 +38,7 @@
     <id>Relation</id>
     <coordinates>
       <x>65</x>
-      <y>286</y>
+      <y>247</y>
       <w>429</w>
       <h>52</h>
     </coordinates>
@@ -50,7 +50,7 @@ Login(Username, Password)</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>663</x>
-      <y>221</y>
+      <y>182</y>
       <w>130</w>
       <h>39</h>
     </coordinates>
@@ -61,7 +61,7 @@ Login(Username, Password)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>715</x>
-      <y>247</y>
+      <y>208</y>
       <w>39</w>
       <h>156</h>
     </coordinates>
@@ -72,7 +72,7 @@ Login(Username, Password)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>481</x>
-      <y>351</y>
+      <y>312</y>
       <w>260</w>
       <h>52</h>
     </coordinates>
@@ -84,7 +84,7 @@ Login(User, Pass)</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>715</x>
-      <y>377</y>
+      <y>338</y>
       <w>26</w>
       <h>91</h>
     </coordinates>
@@ -95,7 +95,7 @@ Login(User, Pass)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>728</x>
-      <y>403</y>
+      <y>364</y>
       <w>247</w>
       <h>52</h>
     </coordinates>
@@ -107,7 +107,7 @@ new Employee(...)</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>949</x>
-      <y>416</y>
+      <y>377</y>
       <w>130</w>
       <h>39</h>
     </coordinates>
@@ -118,7 +118,7 @@ new Employee(...)</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>1001</x>
-      <y>494</y>
+      <y>455</y>
       <w>26</w>
       <h>52</h>
     </coordinates>
@@ -129,7 +129,7 @@ new Employee(...)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1001</x>
-      <y>442</y>
+      <y>403</y>
       <w>39</w>
       <h>78</h>
     </coordinates>
@@ -140,7 +140,7 @@ new Employee(...)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>481</x>
-      <y>507</y>
+      <y>468</y>
       <w>546</w>
       <h>52</h>
     </coordinates>
@@ -152,7 +152,7 @@ this</panel_attributes>
     <id>UMLFrame</id>
     <coordinates>
       <x>520</x>
-      <y>390</y>
+      <y>351</y>
       <w>598</w>
       <h>117</h>
     </coordinates>
@@ -164,7 +164,7 @@ Employee Fonund</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>91</x>
-      <y>507</y>
+      <y>468</y>
       <w>403</w>
       <h>52</h>
     </coordinates>
