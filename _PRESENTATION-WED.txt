@@ -2,6 +2,8 @@ What are we doing
 Status, how far
 How we plan sprints
 
+FURPS+
+
 presentation
 3-5 minutes
 Wed.
