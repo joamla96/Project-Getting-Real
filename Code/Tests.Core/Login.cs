@@ -14,7 +14,7 @@ namespace Tests.Core {
 		[TestMethod]
 		public void TestSaveEmployeeInRepository() {
 			Address Address_A = new Address(38, "Grønløkkevej", 6800, "Odense");
-			Employee A = new Employee(1, "test@example.com", "1234", "Test", "User", Address_A, "12344567");
+			Employee A = new Employee(1, "test@example.com", "1234", "Test", "User", Address_A, "12344567", Permissions.Employee);
 
 			EmployeeRepository.SaveEmployee(A);
 			List<Employee> EmployeeList = EmployeeRepository.GetEmployees();
@@ -45,6 +45,8 @@ namespace Tests.Core {
 			EmployeeRepository.SaveEmployee(A);
 
 			EmployeeRepository.Update(1, "Firstname", "NewFirstName");
+			EmployeeRepository.Update(1, "Lastname", "NewLastName");
+			EmployeeRepository.Update(1, "Email", "new@email.com");
 
 			Employee B = EmployeeRepository.GetEmployee(1);
 			Assert.AreEqual(B.Firstname, "NewFirstName");

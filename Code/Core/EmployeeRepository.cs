@@ -27,6 +27,9 @@ namespace Core {
 
 			return EmpList;
 		}
+		public Employee GetEmployee(int ID) {
+			return Employees[ID];
+		}
 
 		public void SaveEmployee(Employee Emp) {
 			if (this.Employees.ContainsKey(Emp.ID)) {
@@ -36,8 +39,25 @@ namespace Core {
 			this.Employees.Add(Emp.ID, Emp);
 		}
 
-		public Employee GetEmployee(int ID) {
-			return Employees[ID];
+		public void Update(int id, string prop, string newvalue) {
+			Employee Emp = this.GetEmployee(id);
+
+			switch(prop) {
+				case "Firstname": Emp.Firstname = newvalue; break;
+				case "Lastname": Emp.Lastname = newvalue; break;
+				case "Email": Emp.Email = newvalue; break;
+				case "password": Emp.Password = newvalue; break;
+				case "Phone": Emp.Phone = newvalue; break;
+			}
+
+			this.SaveEmployee(Emp);
+		}
+
+		public void Update(int id, string prop, Address newvalue) {
+			Employee Emp = this.GetEmployee(id);
+			Emp.Address = newvalue;
+
+			this.SaveEmployee(Emp);
 		}
 	}
 }
