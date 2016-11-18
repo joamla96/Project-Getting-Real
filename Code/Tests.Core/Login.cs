@@ -25,11 +25,11 @@ namespace Tests.Core {
 		[TestMethod]
 		public void TestLogin() {
 			Address Address_A = new Address(38, "Grønløkkevej", 6800, "Odense");
-			Employee A = new Employee(1, "test@example.com", "1234", "Test", "User", Address_A, "12344567");
+			Employee A = new Employee(1, "test@example.com", "1234", "Test", "User", Address_A, "12344567", Permissions.Employee);
 			EmployeeRepository.SaveEmployee(A);
 
 			Address Address_B = new Address(1, "Grønløkkevej", 6800, "Odense");
-			Employee B = new Employee(2, "test2@example.com", "1235", "Test2", "User2", Address_B, "23456789");
+			Employee B = new Employee(2, "test2@example.com", "1235", "Test2", "User2", Address_B, "23456789", Permissions.Manager);
 			EmployeeRepository.SaveEmployee(B);
 
 			Employee AL = EmployeeRepository.Login("test@example.com", "1234");
@@ -41,7 +41,7 @@ namespace Tests.Core {
 		[TestMethod]
 		public void TestCanUpdateCustomer() {
 			Address Address_A = new Address(38, "Grønløkkevej", 6800, "Odense");
-			Employee A = new Employee(1, "test@example.com", "1234", "Test", "User", Address_A, "12344567");
+			Employee A = new Employee(1, "test@example.com", "1234", "Test", "User", Address_A, "12344567", Permissions.Manager);
 			EmployeeRepository.SaveEmployee(A);
 
 			EmployeeRepository.Update(1, "Firstname", "NewFirstName");

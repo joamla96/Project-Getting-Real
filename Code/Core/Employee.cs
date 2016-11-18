@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Core {
-	enum Permissions {
+	public enum Permissions {
 		Manager = 1,
 		Employee = 2
 	};
@@ -19,7 +19,7 @@ namespace Core {
 		public string Phone { get; set; }
 		public Enum Permissions { get; set; }
 
-		public Employee(int id, string email, string password, string firstname, string lastname, Address address, string phone) {
+		public Employee(int id, string email, string password, string firstname, string lastname, Address address, string phone, Permissions permission) {
 			this.ID = id;
 			this.Email = email;
 			this.Password = password;
@@ -27,6 +27,7 @@ namespace Core {
 			this.Lastname = lastname;
 			this.Address = address;
 			this.Phone = phone;
+			this.Permissions = permission;
 		}
 	}
 }
