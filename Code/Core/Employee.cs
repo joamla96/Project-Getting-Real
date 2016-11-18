@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Core {
+	enum Permissions {
+		Manager = 1,
+		Employee = 2
+	};
 	public class Employee {
 		public int ID { get; set; }
 		public string Email { get; set; }
@@ -13,6 +17,7 @@ namespace Core {
 		public string Lastname { get; set; }
 		public Address Address { get; set; }
 		public string Phone { get; set; }
+		public Enum Permissions { get; set; }
 
 		public Employee(int id, string email, string password, string firstname, string lastname, Address address, string phone) {
 			this.ID = id;
