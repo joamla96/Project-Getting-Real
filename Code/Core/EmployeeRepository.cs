@@ -35,5 +35,9 @@ namespace Core {
 
 			this.Employees.Add(Emp.ID, Emp);
 		}
+
+		public Employee GetEmployee(int ID) {
+			return Employees[ID];
+		}
 	}
 }
