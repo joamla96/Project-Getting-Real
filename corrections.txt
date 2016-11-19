@@ -1,0 +1,3 @@
+questions: 
+- writeconsole: foreach is wrong
+- update: do you need new Employee ?
