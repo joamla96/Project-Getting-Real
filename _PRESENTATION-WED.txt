@@ -1,8 +1,8 @@
-What are we doing
-Status, how far
-How we plan sprints
+What are we doing - Jonas
+Status, how far	 - Donato
+How we plan sprints - Loan
 
-FURPS+
+FURPS+ - Pedro
 
 presentation
 3-5 minutes
