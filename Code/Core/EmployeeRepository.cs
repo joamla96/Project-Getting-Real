@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core {
 	public class EmployeeRepository {
@@ -32,10 +29,7 @@ namespace Core {
 		}
 
 		public void SaveEmployee(Employee Emp) {
-			if (this.Employees.ContainsKey(Emp.ID)) {
-				this.Employees.Remove(Emp.ID);
-			}
-
+			this.Delete(Emp.ID);
 			this.Employees.Add(Emp.ID, Emp);
 		}
 
@@ -48,16 +42,25 @@ namespace Core {
 				case "Email": Emp.Email = newvalue; break;
 				case "password": Emp.Password = newvalue; break;
 				case "Phone": Emp.Phone = newvalue; break;
+				default: throw new Exception("Invalid Property");
 			}
 
 			this.SaveEmployee(Emp);
 		}
-
+		
 		public void Update(int id, string prop, Address newvalue) {
+			if (prop != "Address") throw new Exception("Invalid Property");
 			Employee Emp = this.GetEmployee(id);
 			Emp.Address = newvalue;
 
 			this.SaveEmployee(Emp);
+		}
+
+		public bool Delete(int id) {
+			if (Employees.ContainsKey(id)) {
+				Employees.Remove(id);
+				return true;
+			} else { return false; }
 		}
 	}
 }

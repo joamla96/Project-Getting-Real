@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.Core {
 	[TestClass]
-	public class Login {
+	public class EmployeeTests {
 		EmployeeRepository EmployeeRepository = new EmployeeRepository();
 		
 		[TestMethod]
@@ -24,11 +21,11 @@ namespace Tests.Core {
 
 		[TestMethod]
 		public void TestLogin() {
-			Address Address_A = new Address(38, "Grønløkkevej", 6800, "Odense");
+			Address Address_A = new Address(38, "Grønløkkevej", 5000, "Odense");
 			Employee A = new Employee(1, "test@example.com", "1234", "Test", "User", Address_A, "12344567", Permissions.Employee);
 			EmployeeRepository.SaveEmployee(A);
 
-			Address Address_B = new Address(1, "Grønløkkevej", 6800, "Odense");
+			Address Address_B = new Address(1, "Grønløkkevej", 5000, "Odense");
 			Employee B = new Employee(2, "test2@example.com", "1235", "Test2", "User2", Address_B, "23456789", Permissions.Manager);
 			EmployeeRepository.SaveEmployee(B);
 
@@ -39,11 +36,11 @@ namespace Tests.Core {
 
 		[TestMethod]
 		public void TestLoginNoUser() {
-			Address Address_A = new Address(38, "Grønløkkevej", 6800, "Odense");
+			Address Address_A = new Address(38, "Grønløkkevej", 5000, "Odense");
 			Employee A = new Employee(1, "test@example.com", "1234", "Test", "User", Address_A, "12344567", Permissions.Employee);
 			EmployeeRepository.SaveEmployee(A);
 
-			Address Address_B = new Address(1, "Grønløkkevej", 6800, "Odense");
+			Address Address_B = new Address(1, "Grønløkkevej", 5000, "Odense");
 			Employee B = new Employee(2, "test2@example.com", "1235", "Test2", "User2", Address_B, "23456789", Permissions.Manager);
 			EmployeeRepository.SaveEmployee(B);
 
@@ -59,8 +56,8 @@ namespace Tests.Core {
 
 
 		[TestMethod]
-		public void TestCanUpdateCustomer() {
-			Address Address_A = new Address(38, "Grønløkkevej", 6800, "Odense");
+		public void TestCanUpdateEmployee() {
+			Address Address_A = new Address(38, "Grønløkkevej", 5000, "Odense");
 			Employee A = new Employee(1, "test@example.com", "1234", "Test", "User", Address_A, "12344567", Permissions.Manager);
 			EmployeeRepository.SaveEmployee(A);
 
@@ -70,6 +67,15 @@ namespace Tests.Core {
 
 			Employee B = EmployeeRepository.GetEmployee(1);
 			Assert.AreEqual(B.Firstname, "NewFirstName");
+		}
+
+		[TestMethod]
+		public void TestCanDeleteEmployee() {
+			Address Address_A = new Address(38, "Grønløkkevej", 5000, "Odense");
+			Employee A = new Employee(1, "test@example.com", "1234", "Test", "User", Address_A, "12344567", Permissions.Manager);
+			EmployeeRepository.SaveEmployee(A);
+
+			Assert.IsTrue(EmployeeRepository.Delete(1));
 		}
 	}
 }
