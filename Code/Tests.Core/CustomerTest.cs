@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 
 namespace Tests.Core
 {
@@ -17,7 +13,7 @@ namespace Tests.Core
         [TestMethod]
         public void TestSaveCustomerInRepository()
         {
-            Address Address_A = new Address(38, "Grønløkkevej", 6800, "Odense");
+            Address Address_A = new Address(50, "Grønløkkevej", 5000, "Odense");
             Customer A = new Customer(1, "test@example.com", "1234", "Test", "User", Address_A, "12344567");
 
             CustomerRepository.SaveCustomer(A);
@@ -29,7 +25,7 @@ namespace Tests.Core
         [TestMethod]
         public void TestCanUpdateCustomer()
         {
-            Address Address_A = new Address(38, "Grønløkkevej", 5000, "Odense");
+            Address Address_A = new Address(50, "Grønløkkevej", 5000, "Odense");
             Customer A = new Customer(1, "test@example.com", "1234", "Test", "User", Address_A, "12344567");
             CustomerRepository.SaveCustomer(A);
 
@@ -44,7 +40,7 @@ namespace Tests.Core
         [TestMethod]
         public void TestCanDeleteCustomer()
         {
-            Address Address_A = new Address(38, "Grønløkkevej", 5000, "Odense");
+            Address Address_A = new Address(50, "Grønløkkevej", 5000, "Odense");
             Customer A = new Customer(1, "test@example.com", "1234", "Test", "User", Address_A, "12344567");
             CustomerRepository.SaveCustomer(A);
 
