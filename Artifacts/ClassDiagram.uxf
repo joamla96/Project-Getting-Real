@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>660</x>
-      <y>638</y>
+      <x>594</x>
+      <y>627</y>
       <w>264</w>
       <h>165</h>
     </coordinates>
@@ -25,8 +25,8 @@ serviceDescription: string)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>660</x>
-      <y>275</y>
+      <x>594</x>
+      <y>264</y>
       <w>264</w>
       <h>264</h>
     </coordinates>
@@ -52,8 +52,8 @@ group=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>88</x>
-      <y>341</y>
+      <x>22</x>
+      <y>330</y>
       <w>264</w>
       <h>154</h>
     </coordinates>
@@ -72,8 +72,8 @@ group=3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>88</x>
-      <y>561</y>
+      <x>22</x>
+      <y>550</y>
       <w>264</w>
       <h>242</h>
     </coordinates>
@@ -98,17 +98,16 @@ group=3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1232</x>
-      <y>539</y>
+      <x>1166</x>
+      <y>528</y>
       <w>264</w>
       <h>187</h>
     </coordinates>
     <panel_attributes>Schedule
 --
 TaskId: int
-Date: string
-StartTime: string
-FinishTime: string
+StartDate: Datetime
+FinishDate: Datetime
 --
 Employee(taskId: int, date: string, 
 startingTime: string, 
@@ -121,8 +120,8 @@ group=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>660</x>
-      <y>88</y>
+      <x>594</x>
+      <y>77</y>
       <w>264</w>
       <h>121</h>
     </coordinates>
@@ -141,8 +140,8 @@ group=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1232</x>
-      <y>363</y>
+      <x>1166</x>
+      <y>352</y>
       <w>264</w>
       <h>110</h>
     </coordinates>
@@ -160,8 +159,8 @@ group=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>209</x>
-      <y>484</y>
+      <x>143</x>
+      <y>473</y>
       <w>55</w>
       <h>99</h>
     </coordinates>
@@ -174,8 +173,8 @@ group=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>781</x>
-      <y>198</y>
+      <x>715</x>
+      <y>187</y>
       <w>55</w>
       <h>99</h>
     </coordinates>
@@ -188,8 +187,8 @@ group=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1353</x>
-      <y>462</y>
+      <x>1287</x>
+      <y>451</y>
       <w>55</w>
       <h>99</h>
     </coordinates>
@@ -202,8 +201,8 @@ group=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>913</x>
-      <y>682</y>
+      <x>847</x>
+      <y>671</y>
       <w>341</w>
       <h>44</h>
     </coordinates>
@@ -215,8 +214,8 @@ m2=1..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>341</x>
-      <y>682</y>
+      <x>275</x>
+      <y>671</y>
       <w>341</w>
       <h>44</h>
     </coordinates>
@@ -228,8 +227,8 @@ m2=0..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>781</x>
-      <y>528</y>
+      <x>715</x>
+      <y>517</y>
       <w>55</w>
       <h>132</h>
     </coordinates>
@@ -241,8 +240,8 @@ m2=0..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1034</x>
-      <y>275</y>
+      <x>968</x>
+      <y>264</y>
       <w>143</w>
       <h>165</h>
     </coordinates>
@@ -259,8 +258,8 @@ PostalCode</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>913</x>
-      <y>308</y>
+      <x>847</x>
+      <y>297</y>
       <w>143</w>
       <h>44</h>
     </coordinates>
