@@ -81,7 +81,7 @@ group=3</panel_attributes>
 CustomerId: int
 Name: string
 Type: Enum[Private, Business]
-Address: String
+Address: Address
 Email: string
 Phone: string
 --
@@ -237,8 +237,8 @@ m2=0..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>968</x>
-      <y>220</y>
+      <x>385</x>
+      <y>407</y>
       <w>143</w>
       <h>165</h>
     </coordinates>
@@ -255,14 +255,27 @@ PostalCode</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>847</x>
-      <y>253</y>
-      <w>143</w>
-      <h>44</h>
+      <x>275</x>
+      <y>440</y>
+      <w>132</w>
+      <h>165</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+    <additional_attributes>10.0;120.0;50.0;120.0;50.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>517</x>
+      <y>330</y>
+      <w>99</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;120.0;40.0;120.0;40.0;10.0;70.0;10.0</additional_attributes>
   </element>
 </diagram>
