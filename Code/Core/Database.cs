@@ -7,7 +7,7 @@ namespace Core
 {
     public class Database
     {
-        private const string ConnInfo = "Server=ealdb1.eal.local; Database=ejl86_usr; Password=Baz1nga86";
+        private const string ConnInfo = "Server=ealdb1.eal.local; Database=ejl86_db; User Id=ejl86_usr; Password=Baz1nga86";
         private SqlConnection Conn;
 
         //Database()
