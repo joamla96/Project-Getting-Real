@@ -4,15 +4,14 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>594</x>
-      <y>627</y>
+      <x>990</x>
+      <y>671</y>
       <w>264</w>
       <h>165</h>
     </coordinates>
     <panel_attributes>Service
 --
-ServiceId
-ServiceType(Client, Business)
+ServiceID
 ServiceDescription
 --
 Employee(serviceId: int, 
@@ -26,7 +25,7 @@ serviceDescription: string)
     <id>UMLClass</id>
     <coordinates>
       <x>594</x>
-      <y>264</y>
+      <y>220</y>
       <w>264</w>
       <h>264</h>
     </coordinates>
@@ -53,7 +52,7 @@ group=2</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>22</x>
-      <y>330</y>
+      <y>286</y>
       <w>264</w>
       <h>154</h>
     </coordinates>
@@ -73,7 +72,7 @@ group=3</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>22</x>
-      <y>550</y>
+      <y>506</y>
       <w>264</w>
       <h>242</h>
     </coordinates>
@@ -81,7 +80,7 @@ group=3</panel_attributes>
 --
 CustomerId: int
 Name: string
-Type: Enum[Client, Business]
+Type: Enum[Private, Business]
 Address: String
 Email: string
 Phone: string
@@ -98,30 +97,30 @@ group=3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1166</x>
-      <y>528</y>
+      <x>605</x>
+      <y>594</y>
       <w>264</w>
       <h>187</h>
     </coordinates>
     <panel_attributes>Schedule
 --
-TaskId: int
+ID: int
 StartDate: Datetime
 FinishDate: Datetime
+Services: Service[]
 --
-Employee(taskId: int, date: string, 
+New(ID: int, date: string, 
 startingTime: string, 
 closingTime: string)
 
-
-group=1</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>594</x>
-      <y>77</y>
+      <y>33</y>
       <w>264</w>
       <h>121</h>
     </coordinates>
@@ -140,8 +139,8 @@ group=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1166</x>
-      <y>352</y>
+      <x>594</x>
+      <y>847</y>
       <w>264</w>
       <h>110</h>
     </coordinates>
@@ -152,15 +151,14 @@ Dictronary&lt;ID, Schedule&gt; Schedules;
 GetSchedule(SheduleId: int): Schedule 
 SsveSchedule(Schedule):
 
-
-group=1</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>143</x>
-      <y>473</y>
+      <y>429</y>
       <w>55</w>
       <h>99</h>
     </coordinates>
@@ -174,7 +172,7 @@ group=3</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>715</x>
-      <y>187</y>
+      <y>143</y>
       <w>55</w>
       <h>99</h>
     </coordinates>
@@ -187,61 +185,60 @@ group=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1287</x>
-      <y>451</y>
+      <x>715</x>
+      <y>770</y>
       <w>55</w>
       <h>99</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
-m2=0..n
-group=1</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+m2=0..n</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>847</x>
-      <y>671</y>
-      <w>341</w>
+      <x>858</x>
+      <y>715</y>
+      <w>154</w>
       <h>44</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1..n
 m2=1..n</panel_attributes>
-    <additional_attributes>10.0;10.0;290.0;10.0</additional_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>275</x>
-      <y>671</y>
-      <w>341</w>
+      <y>627</y>
+      <w>352</w>
       <h>44</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1..n
 m2=0..n</panel_attributes>
-    <additional_attributes>10.0;10.0;290.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;300.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>715</x>
-      <y>517</y>
+      <y>473</y>
       <w>55</w>
-      <h>132</h>
+      <h>143</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1..n
 m2=0..n</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>968</x>
-      <y>264</y>
+      <y>220</y>
       <w>143</w>
       <h>165</h>
     </coordinates>
@@ -259,7 +256,7 @@ PostalCode</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>847</x>
-      <y>297</y>
+      <y>253</y>
       <w>143</w>
       <h>44</h>
     </coordinates>
