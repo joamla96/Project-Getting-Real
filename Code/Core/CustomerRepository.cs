@@ -33,7 +33,7 @@ namespace Core
             param.Add("@HouseNo", addr.HouseNo.ToString());
             param.Add("@FloorNo", addr.FloorNo.ToString());
             param.Add("@Streetname", addr.Streetname);
-            param.Add("@Entrance", addr.Entrance);
+            param.Add("@Entrance", "" + addr.Entrance);
             param.Add("@City", addr.City);
             param.Add("@PostCode", addr.PostCode.ToString());
 
