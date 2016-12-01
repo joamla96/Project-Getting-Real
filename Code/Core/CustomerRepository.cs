@@ -1,21 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-<<<<<<< HEAD
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Core {
-	class CustomerRepository {
-	}
-=======
 
 namespace Core
 {
     public class CustomerRepository
     {
         private Dictionary<int, Customer> Customers = new Dictionary<int, Customer>();
-
+        private Database DB = new Database();
         public List<Customer> GetCustomers()
         {
             // Convert Dictrionary to List (without having any KeyValuePairs)s
@@ -31,8 +22,23 @@ namespace Core
 
         public void SaveCustomer(Customer Customer)
         {
-            this.Delete(Customer.ID);
-            this.Customers.Add(Customer.ID, Customer);
+            //this.Delete(Customer.ID);
+            //this.Customers.Add(Customer.ID, Customer);
+            Dictionary<string, string> param = new Dictionary<string, string>();
+            Address addr = Customer.Address;
+            param.Add("@Firstname", Customer.Firstname);
+            param.Add("@Lastname", Customer.Lastname);
+            param.Add("@Email", Customer.Email);
+            param.Add("@Phone", Customer.Phone);
+            param.Add("@HouseNo", addr.HouseNo.ToString());
+            param.Add("@FloorNo", addr.FloorNo.ToString());
+            param.Add("@Streetname", addr.Streetname);
+            param.Add("@Entrance", addr.Entrance);
+            param.Add("@City", addr.City);
+            param.Add("@PostCode", addr.PostCode.ToString());
+
+            DB.RunSP("SaveCustomer", param);
+
         }
 
         public void Update(int id, string prop, string newvalue)
@@ -71,5 +77,5 @@ namespace Core
             else { return false; }
         }
     }
->>>>>>> origin/master
+
 }

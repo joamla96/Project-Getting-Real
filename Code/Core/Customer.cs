@@ -4,11 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-<<<<<<< HEAD
-namespace Core {
-	class Customer {
-	}
-=======
+
 namespace Core
 {
     public class Customer
@@ -32,5 +28,4 @@ namespace Core
             this.Phone = phone;
         }
     }
->>>>>>> origin/master
 }

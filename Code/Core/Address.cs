@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace Core {
 	public class Address {
-		public int HouseNr { get; set; }
-		public int FloorNr { get; set; }
-		public string Enterance { get; set; } // Eg. Left / Right
+		public int HouseNo { get; set; }
+		public int FloorNo { get; set; }
+		public string Entrance { get; set; } // Eg. Left / Right
 		public string Streetname { get; set; }
 		public string City { get; set; }
-		public int PostalCode { get; set; }
+		public int PostCode { get; set; }
 
 		public Address(int housenr, int floornr, string enterance, string streetname, int postalcode, string city) {
-			this.HouseNr = housenr;
-			this.FloorNr = floornr;
-			this.Enterance = enterance;
+			this.HouseNo = housenr;
+			this.FloorNo = floornr;
+			this.Entrance = enterance;
 			this.Streetname = streetname;
 			this.City = city;
-			this.PostalCode = postalcode;
+			this.PostCode = postalcode;
 		}
 
 		public Address(int housenr, string streetname, int postalcode, string city) {
-			this.HouseNr = housenr;
+			this.HouseNo = housenr;
 			this.Streetname = streetname;
 			this.City = city;
-			this.PostalCode = postalcode;
+			this.PostCode = postalcode;
 		}
 	}
 }
