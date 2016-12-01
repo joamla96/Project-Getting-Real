@@ -9,10 +9,10 @@
       <w>264</w>
       <h>165</h>
     </coordinates>
-    <panel_attributes>Service
+    <panel_attributes>Task
 --
-ServiceID
-ServiceDescription
+ID
+Description
 --
 Employee(serviceId: int, 
 serviceType: Enum, 
