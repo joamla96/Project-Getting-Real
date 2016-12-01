@@ -1,0 +1,45 @@
+CREATE TABLE Employee (
+	ID				INT				NOT NULL IDENTITY (1,1),
+	Firstname		NVARCHAR(MAX)	NOT NULL,
+	Lastname		NVARCHAR(MAX)	NOT NULL,
+	Email			NVARCHAR(MAX)	NOT NULL,
+	Phone			NVARCHAR(15)	NOT NULL,
+	Permission		INT				NOT NULL,
+	HouseNo			INT				NOT NULL,
+	FloorNo			INT				NULL,
+	Entrance		NVARCHAR(12)	NULL,
+	Streetname		NVARCHAR(MAX)	NOT NULL,
+	City			NVARCHAR(MAX)	NOT NULL,
+	PostCode		INT				NOT NULL,
+CONSTRAINT Employee_PK PRIMARY KEY (ID)
+);
+
+CREATE TABLE Customer (
+	ID				INT				NOT NULL IDENTITY (1,1),
+	Firstname		NVARCHAR(MAX)	NOT NULL,
+	Lastname		NVARCHAR(MAX)	NOT NULL,
+	Email			NVARCHAR(MAX)	NOT NULL,
+	Phone			NVARCHAR(15)	NOT NULL,
+	HouseNo			INT				NOT NULL,
+	FloorNo			INT				NULL,
+	Entrance		NVARCHAR(12)	NULL,
+	Streetname		NVARCHAR(MAX)	NOT NULL,
+	City			NVARCHAR(MAX)	NOT NULL,
+	PostCode		INT				NOT NULL,
+CONSTRAINT Customer_PK PRIMARY KEY (ID)
+);
+
+
+CREATE TABLE Service_ (
+	ID					INT				NOT NULL IDENTITY (1,1),
+	ServiceType			NVARCHAR(MAX)	NOT NULL,
+	ServiceDescription	NVARCHAR(MAX)	NOT NULL,
+CONSTRAINT Service_PK PRIMARY KEY (ID)
+)
+
+CREATE TABLE Schedule (
+	ID				INT				NOT NULL IDENTITY (1,1),
+	StartDate		DATETIME2		NOT NULL,
+	FinishDate		DATETIME2		NOT NULL,				
+CONSTRAINT	schedule_PK PRIMARY KEY (ID)
+);
