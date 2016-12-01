@@ -1,0 +1,7 @@
+CREATE PROC usp_GetCustomer(
+	@ID		INT
+)
+AS
+	BEGIN
+	SELECT * FROM Customer WHERE ID = @ID
+END

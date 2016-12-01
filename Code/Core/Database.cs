@@ -37,5 +37,31 @@ namespace Core
                 }
             }                
         }
+        public Dictionary<string, string> GetSP(string name, Dictionary<string, string> param)
+        {
+            Dictionary<string, string> Result = new Dictionary<string, string>();
+            using (Conn = new SqlConnection(ConnInfo))
+            {
+                SqlCommand cmd = new SqlCommand(name, this.Conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                foreach (KeyValuePair<string, string> entry in param)
+                {
+                    cmd.Parameters.Add(new SqlParameter(entry.Key, entry.Value));
+                }
+                Conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                Conn.Close();
+
+                if (reader.HasRows) 
+                {
+                    while (reader.Read())
+                    {
+                        Result.Add(reader.GetName(), reader.GetString(1));
+                    }
+                }
+                return Result;
+            }
+
+        }
     }
 }

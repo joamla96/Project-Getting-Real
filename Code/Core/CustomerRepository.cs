@@ -17,7 +17,7 @@ namespace Core
         }
         public Customer GetCustomer(int ID)
         {
-            return Customers[ID];
+              Dictionary<string,string>
         }
 
         public void SaveCustomer(Customer Customer)
@@ -31,7 +31,7 @@ namespace Core
             param.Add("@Email", Customer.Email);
             param.Add("@Phone", Customer.Phone);
             param.Add("@HouseNo", addr.HouseNo.ToString());
-            param.Add("@FloorNo", addr.FloorNo.ToString());
+            param.Add("@FloorNo", "" + addr.FloorNo.ToString());
             param.Add("@Streetname", addr.Streetname);
             param.Add("@Entrance", "" + addr.Entrance);
             param.Add("@City", addr.City);
