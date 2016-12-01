@@ -37,7 +37,7 @@ namespace Core
             param.Add("@City", addr.City);
             param.Add("@PostCode", addr.PostCode.ToString());
 
-            DB.RunSP("SaveCustomer", param);
+            DB.RunSP("usp_SaveCustomer", param);
 
         }
 

@@ -7,7 +7,7 @@ namespace Core
 {
     public class Database
     {
-        private const string ConnInfo = "Server=ealdb1.eal.local; Database=ejl86_usr; Passowrd=Baz1nga86";
+        private const string ConnInfo = "Server=ealdb1.eal.local; Database=ejl86_usr; Password=Baz1nga86";
         private SqlConnection Conn;
 
         //Database()
@@ -30,10 +30,11 @@ namespace Core
                     Conn.Open();
                     cmd.ExecuteNonQuery();
                 }
+
                 finally
                 {
                     Conn.Close();
-                }         
+                }
             }                
         }
     }
