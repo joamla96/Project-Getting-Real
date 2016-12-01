@@ -1,3 +1,8 @@
+	DROP TABLE Employee;
+	DROP TABLE Customer;
+	DROP TABLE Task;
+	DROP TABLE Schedule;
+
 CREATE TABLE Employee (
 	ID				INT				NOT NULL IDENTITY (1,1),
 	Firstname		NVARCHAR(MAX)	NOT NULL,
@@ -30,12 +35,11 @@ CONSTRAINT Customer_PK PRIMARY KEY (ID)
 );
 
 
-CREATE TABLE Service_ (
+CREATE TABLE Task (
 	ID					INT				NOT NULL IDENTITY (1,1),
-	ServiceType			NVARCHAR(MAX)	NOT NULL,
-	ServiceDescription	NVARCHAR(MAX)	NOT NULL,
-CONSTRAINT Service_PK PRIMARY KEY (ID)
-)
+	Description		NVARCHAR(MAX)	NOT NULL,
+CONSTRAINT Task_PK PRIMARY KEY (ID)
+);
 
 CREATE TABLE Schedule (
 	ID				INT				NOT NULL IDENTITY (1,1),
