@@ -1,0 +1,7 @@
+CREATE PROC DeleteCustomer(
+	@ID		INT
+)
+AS
+	BEGIN
+	DELETE FROM Customer WHERE ID = @ID
+	END
