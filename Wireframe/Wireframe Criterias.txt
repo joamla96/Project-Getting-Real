@@ -1,0 +1,8 @@
+For le UI Designer
+- Simple
+- 2D
+- No Colours
+- Very limited real-text (lorem ipsum to simulate text maybe)
+- Essentials only
+- Include functionality
+- Self explanitory
