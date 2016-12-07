@@ -14,20 +14,37 @@ namespace Tests.Core
         [TestMethod]
         public void TestSaveCustomerInRepository()
         {
+			bool CustomerFound = false;
             Address Address_A = new Address(50, "Grønløkkevej", 5000, "Odense");
-            Customer A = new Customer(1, "test@example.com", "1234", "Test", "User", Address_A, "12344567");
+            Customer A = new Customer(1, "test@example.com", "Test", "User", Address_A, "12344567");
 
             CustomerRepository.SaveCustomer(A);
             List<Customer> CustomerList = CustomerRepository.GetCustomers();
 
-            Assert.IsTrue(CustomerList.Contains(A));
+            foreach(Customer X in CustomerList) {
+				Address XA = X.Address;
+				if(
+					X.ID == A.ID
+				&&	X.Email == A.Email
+				&&	X.Firstname == A.Firstname
+				&&	X.Lastname == A.Lastname
+				&&	X.Phone == A.Phone
+
+				&&	XA.HouseNo == Address_A.HouseNo
+				&&	XA.Streetname == Address_A.Streetname
+				&&	XA.PostCode == Address_A.PostCode
+				&&	XA.City == Address_A.City
+				) { CustomerFound = true; }
+			}
+
+			Assert.IsTrue(CustomerFound);
         }
 
         [TestMethod]
         public void TestCanUpdateCustomer()
         {
             Address Address_A = new Address(50, "Grønløkkevej", 5000, "Odense");
-            Customer A = new Customer(1, "test@example.com", "1234", "Test", "User", Address_A, "12344567");
+            Customer A = new Customer(1, "test@example.com", "Test", "User", Address_A, "12344567");
             CustomerRepository.SaveCustomer(A);
 
             CustomerRepository.Update(1, "Firstname", "NewFirstName");
@@ -42,7 +59,7 @@ namespace Tests.Core
         public void TestCanDeleteCustomer()
         {
             Address Address_A = new Address(50, "Grønløkkevej", 5000, "Odense");
-            Customer A = new Customer(1, "test@example.com", "1234", "Test", "User", Address_A, "12344567");
+            Customer A = new Customer(1, "test@example.com", "Test", "User", Address_A, "12344567");
             CustomerRepository.SaveCustomer(A);
 
             Assert.IsTrue(CustomerRepository.Delete(1));

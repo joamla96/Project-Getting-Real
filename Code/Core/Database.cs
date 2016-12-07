@@ -49,7 +49,7 @@ namespace Core {
 
 					while (reader.Read()) {
 						Dictionary<string, string> Row = new Dictionary<string, string>();
-						for (int i = 0; i < reader.FieldCount-1; i++) {
+						for (int i = 0; i < reader.FieldCount; i++) {
 							Row.Add(reader.GetName(i), reader[i].ToString());
 						}
 						Result.Add(Row);

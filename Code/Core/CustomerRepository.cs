@@ -15,6 +15,10 @@ namespace Core
 			var Result = DB.GetSP("usp_GetCustomer", Params);
 
 			foreach (var Row in Result) {
+					foreach (KeyValuePair<string, string> kvp in Row) {
+						//textBox3.Text += ("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
+						Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
+					}
 				Address Addr = new Address(
 					int.Parse(Row["HouseNo"]),
 					int.Parse(Row["FloorNo"]),
@@ -27,7 +31,6 @@ namespace Core
 				RResult = new Customer(
 					int.Parse(Row["ID"]),
 					Row["Email"],
-					Row["Password"],
 					Row["Firstname"],
 					Row["Lastname"],
 					Addr,
@@ -61,7 +64,6 @@ namespace Core
 				Customer C = new Customer(
 					int.Parse(Row["ID"]),
 					Row["Email"],
-					Row["Password"],
 					Row["Firstname"],
 					Row["Lastname"],
 					Addr,
@@ -103,7 +105,6 @@ namespace Core
 				case "Firstname": Param.Add("@Firstname", newvalue); break;
 				case "Lastname": Param.Add("@Lastname", newvalue); break;
 				case "Email": Param.Add("@Email", newvalue); break;
-				case "password": Param.Add("@Password", newvalue); break;
 				case "Phone": Param.Add("@Phone", newvalue); break;
 				default: throw new Exception("Invalid Property");
 			}
