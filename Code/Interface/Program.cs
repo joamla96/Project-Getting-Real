@@ -3,36 +3,173 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Core;
 
 namespace Interface {
-	class Program {
-		Dictionary<int, string> CB = new Dictionary<int, string>();
-		static void Main(string[] args) {
-			Program A = new Program();
-			A.Run();
-		}
-	
-		private void WriteLine(string Line) {
-			int HK = CB.Keys.Last();
-			CB.Add(HK++, Line);
-		}
+	internal class Program {
+        private static void Main()
+        {
+            Program myProgram = new Program();
+            myProgram.Run();
+        }
 
-		private void WriteConsole(bool clear = true) {
-			if(clear) Console.Clear();
-			foreach(var Line in CB) {
-				Console.WriteLine(Line.Value);
-			}
-		}
+        public void Run()
+        {
+            while (true)
+            {
+                Console.WriteLine("Please Choose Your Option\n" +
+                    "1. Search Customer Database \n" +
+                    "2. Search Employee Database \n" +
+                    "3. Edit Customer Database \n" +
+                    "4. Edit Employee Database \n" +
+                    "0. Exit");
+                string userInput = Console.ReadLine();
+                Console.Clear();
 
-		private void Clear() {
-			CB.Clear();
-		}
+            }
+        }
 
-		private void Run() {
-			WriteLine("TEST");
-			WriteLine("TEST2");
-			WriteLine("Test3");
-			WriteConsole(false);
-		}
-	}
+        private static void RunSwitch(string userInput)
+        {
+            Program ui = new Program();
+
+            switch (userInput)
+            {
+                case "1":
+                    //ui.ShowCustomers();
+                    break;
+
+                case "2":
+                    //ui.ShowEmployees();
+                    break;
+                case "3":
+                    ui.UpdateCustomerDatabase();
+                    break;
+
+                case "4":
+                    ui.UpdateCustomerDatabase();
+                    break;
+
+                case "0":
+                    Environment.Exit(0);
+                    break;
+
+                default:
+                    Console.WriteLine("Incorrect Input");
+                    break;
+            }
+        }
+
+        private void UpdateCustomerDatabase()
+        {
+            Program ui = new Program();
+            Database edit = new Database();
+            Console.WriteLine("Choose Your Updated Options\n" +
+                "1. Create Customer \n" +
+                "2. Update Customer \n" +
+                "3. Delete Customer \n" +
+                "0. Back");
+
+            string userInput = Console.ReadLine();
+            Console.Clear();
+
+            switch (userInput)
+            {
+                case "1":
+                    //edit.CreateCustomer();
+                    break;
+
+                case "2":
+                    //edit.UpdateCustomer();
+                    break;
+
+                case "3":
+                    //edit.DeleteCustomer();
+                    break;
+
+                case "0":
+                    ui.Run();
+                    break;
+            }
+        }
+
+        private void UpdateEmployeeDatabase()
+        {
+            Program ui = new Program();
+            Database edit = new Database();
+            Console.WriteLine("Choose Your Updated Options\n" +
+                "1. Create Employee \n" +
+                "2. Update Employee \n" +
+                "3. Delete Employee \n" +
+                "0. Back");
+
+            string userInput = Console.ReadLine();
+            Console.Clear();
+
+            switch (userInput)
+            {
+                case "1":
+                    //edit.CreateEmployee();
+                    break;
+
+                case "2":
+                    //edit.UpdateEmployee();
+                    break;
+
+                case "3":
+                    //edit.DeleteEmployee();
+                    break;
+
+                case "0":
+                    ui.Run();
+                    break;
+            }
+        }
+
+        //private void ShowCustomers()
+        //{
+        //    UI ui = new UI();
+        //    SearchCustomerDatabase searchCustomer = new SearchCustomerDatabase();
+        //    Console.WriteLine("Choose Your Option \n" +
+        //        "1. Show All Customers \n" +
+        //        "0. Back");
+
+        //    string userInput = Console.ReadLine();
+        //    Console.Clear();
+
+        //    switch (userInput)
+        //    {
+        //        case "1":
+        //            searchCustomer.ShowAllCustomers();
+        //            break;
+
+        //        case "0":
+        //            ui.Run();
+        //            break;
+        //    }
+        //}
+
+        //private void ShowEmployees()
+        //{
+        //    UI ui = new UI();
+        //    SearchEmployeeDatabase searchEmployee = new SearchEmployeeDatabase();
+        //    Console.WriteLine("Choose Your Option \n" +
+        //        "1. Show All Employees \n" +
+        //        "0. Back");
+
+        //    string userInput = Console.ReadLine();
+        //    Console.Clear();
+
+        //    switch (userInput)
+        //    {
+        //        case "1":
+        //            searchEmployee.ShowAllEmployees();
+        //            break;
+
+        //        case "0":
+        //            ui.Run();
+        //            break;
+        //    }
+        //}
+    }
 }
