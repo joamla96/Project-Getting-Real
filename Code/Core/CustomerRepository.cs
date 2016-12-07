@@ -76,7 +76,11 @@ namespace Core
 			return CustomerList;
 		}
 
-        public void SaveCustomer(Customer Customer)
+		public int NextID() { // Get the next available ID.
+			throw new NotImplementedException();
+		}
+
+		public void SaveCustomer(Customer Customer)
         {
             //this.Delete(Customer.ID);
             //this.Customers.Add(Customer.ID, Customer);

@@ -47,9 +47,21 @@ namespace Interface {
 			Console.Clear();
 			Console.WriteLine("Create new Customer\n");
 
-			Console.Write("Firstname: ");	string Firstname = Program.GetInput("text");
-			Console.Write("Lastname: ");	string Lastname = Program.GetInput("text");
-			Console.Write("Email: ");		string Email = Program.GetInput("email");
+			Console.Write("\nFirstname: ");		string Firstname = Program.GetInput("text");
+			Console.Write("\nLastname: ");		string Lastname = Program.GetInput("text");
+			Console.Write("\nEmail: ");			string Email = Program.GetInput("email");
+			Console.Write("\nPhone: ");			string Phone = Program.GetInput("phone");
+			Console.Write("\nHouse Number:");	int HouseNo = int.Parse(Program.GetInput("number"));
+			Console.Write("\nFloor Number:");	int FloorNo = int.Parse(Program.GetInput("number"));
+			Console.Write("\nEntrance:");		string Entrance = Program.GetInput("text");
+			Console.Write("\nStreetname:");		string Streetname = Program.GetInput("text");
+			Console.Write("\nCity:");			string City = Program.GetInput("text");
+			Console.Write("\nPostCode:");		int PostCode = int.Parse(Program.GetInput("text"));
+
+			Address Addr = new Address(HouseNo, FloorNo, Entrance, Streetname, PostCode, City);
+			Customer Customer = new Customer(RepoCus.NextID(), Email, Firstname, Lastname, Addr, Phone);
+
+			RepoCus.SaveCustomer(Customer);
 		}
 
 		internal void ShowCustomers() {

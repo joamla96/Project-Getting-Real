@@ -173,8 +173,8 @@ namespace Interface {
 					break;
 
 
-				default: // Default validation needed?
-					break;
+				default: // Lets assume the programmer wants to validate input, if they put a text in the validation field.
+					throw new Exception("A validation text was inputted, but no case for it?");
 
 			}
 
