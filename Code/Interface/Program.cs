@@ -27,27 +27,35 @@ namespace Interface {
                 string userInput = Console.ReadLine();
                 Console.Clear();
 
-				RunSwitch(userInput);
+				try {
+					RunSwitch(userInput);
+				} catch(NotImplementedException) {
+					Console.WriteLine("You accessed an unfinished section.");
+					Console.ReadKey();
+				}
             }
         }
 
         private void RunSwitch(string userInput)
         {
+			CustomerUI CUI = new CustomerUI();
+			EmployeeUI EUI = new EmployeeUI();
+
             switch (userInput)
             {
                 case "1":
-                    //ShowCustomers();
+                    CUI.ShowCustomers();
                     break;
 
                 case "2":
-                    //ShowEmployees();
+                    EUI.ShowEmployees();
                     break;
                 case "3":
-                   UpdateCustomerDatabase();
+                   CUI.UpdateCustomerDatabase();
                   break;
 
                 case "4":
-                    UpdateCustomerDatabase();
+                    EUI.UpdateEmployeeDatabase();
                     break;
 
                 case "0":
@@ -57,66 +65,6 @@ namespace Interface {
                 default:
                     Console.WriteLine("Incorrect Input");
                     break;
-            }
-        }
-
-        private void UpdateCustomerDatabase()
-        {
-            Console.WriteLine("Choose Your Updated Options\n" +
-                "1. Create Customer \n" +
-                "2. Update Customer \n" +
-                "3. Delete Customer \n" +
-                "0. Back");
-
-            string userInput = Console.ReadLine();
-            Console.Clear();
-
-            switch (userInput)
-            {
-                case "1":
-                    //CreateCustomer();
-                    break;
-
-                case "2":
-                    //UpdateCustomer();
-                    break;
-
-                case "3":
-                    //DeleteCustomer();
-                    break;
-
-                case "0":
-					return;
-            }
-        }
-
-        private void UpdateEmployeeDatabase()
-        {
-            Console.WriteLine("Choose Your Updated Options\n" +
-                "1. Create Employee \n" +
-                "2. Update Employee \n" +
-                "3. Delete Employee \n" +
-                "0. Back");
-
-            string userInput = Console.ReadLine();
-            Console.Clear();
-
-            switch (userInput)
-            {
-                case "1":
-                    //CreateEmployee();
-                    break;
-
-                case "2":
-                    //UpdateEmployee();
-                    break;
-
-                case "3":
-                    //DeleteEmployee();
-                    break;
-
-                case "0":
-					return;
             }
         }
 
