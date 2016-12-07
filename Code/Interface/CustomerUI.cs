@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core;
+using System;
 
 namespace Interface {
 	internal class CustomerUI {
+		EmployeeRepository RepoEmp = new EmployeeRepository();
+		CustomerRepository RepoCus = new CustomerRepository();
+		Program Program = new Program();
+
 		internal void UpdateCustomerDatabase() {
 			Console.WriteLine("Choose Your Updated Options\n" +
 				"1. Create Customer \n" +
@@ -43,11 +44,17 @@ namespace Interface {
 		}
 
 		private void CreateCustomer() {
-			throw new NotImplementedException();
+			Console.Clear();
+			Console.WriteLine("Create new Customer\n");
+
+			Console.Write("Firstname: ");	string Firstname = Program.GetInput("text");
+			Console.Write("Lastname: ");	string Lastname = Program.GetInput("text");
+			Console.Write("Email: ");		string Email = Program.GetInput("email");
 		}
 
 		internal void ShowCustomers() {
 			throw new NotImplementedException();
 		}
+
 	}
 }

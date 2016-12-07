@@ -156,14 +156,29 @@ namespace Interface {
 		//	CB.Clear();
 		//}
 
-		private string GetInput(string validation = "") {
+		internal string GetInput(string validation = "", string err = "") {
+			if(err != "") {
+				Console.WriteLine(err);
+				Console.ReadKey();
+			}
+			Validator Valid = new Validator();
 			string input = Console.ReadLine();
 			switch (validation) {
+				case "text": // TODO: Make some validation for text only
+					if (!Valid.Text(input)) return GetInput(validation, "This field only takes text!");
+					break;
 
-				default:
-					return input;
+				case "email": //TODO: Make Email Validation
+					if (!Valid.Email(input)) return GetInput(validation, "Please type valid email!");
+					break;
+
+
+				default: // Default validation needed?
+					break;
 
 			}
+
+			return input;
 		}
 
 		public SecureString GetPassword() { // Thanks StackOverflow: http://stackoverflow.com/questions/3404421/password-masking-console-application
