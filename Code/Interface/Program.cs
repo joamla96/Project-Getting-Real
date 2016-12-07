@@ -54,9 +54,16 @@ namespace Interface {
 				LoggedIn = RepoEmp.Login(Username, Password.ToString());
 				Password = null; // Lets take the password out of memory when we're done with it.
 				return true;
-			} catch (NoUserException) {
+			} catch (InvalidLoginException) {
 				Console.WriteLine("\n\nInvalid User Credentials!");
 				Console.ReadKey();
+				return false;
+			} catch (NoUserException) {
+				Console.WriteLine("\n\nNo Users found in System!");
+				Console.WriteLine("Please, contact system admin.");
+				Console.ReadKey();
+
+				// TODO: Allow registration of first admin, instead of giving this error.
 				return false;
 			}
 

@@ -1,6 +1,7 @@
 ﻿using Core.CustomExceptions;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security;
 
 namespace Core {
@@ -8,13 +9,19 @@ namespace Core {
 		private Dictionary<int, Employee> Employees = new Dictionary<int, Employee>();
 
 		public Employee Login(string Username, string Password) {
+			var Employees = GetEmployees();
+
+			if(!Employees.Any()) {
+				throw new NoUserException();
+			}
+
 			foreach(Employee Emp in GetEmployees()) {
 				if (Emp.Email == Username
 				&&	Emp.Password == Password) {
 					return Emp;
 				}
 			}
-			throw new NoUserException();
+			throw new InvalidLoginException();
 		}
 
 		public List<Employee> GetEmployees() {
