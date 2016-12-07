@@ -17,37 +17,37 @@ namespace Interface {
         {
             while (true)
             {
-                Console.WriteLine("Please Choose Your Option\n" +
-                    "1. Search Customer Database \n" +
-                    "2. Search Employee Database \n" +
-                    "3. Edit Customer Database \n" +
-                    "4. Edit Employee Database \n" +
-                    "0. Exit");
+				Console.Clear();
+				Console.WriteLine("Please Choose Your Option");
+				Console.WriteLine("1. Search Customer Database");
+				Console.WriteLine("2. Search Employee Database ");
+				Console.WriteLine("3. Edit Customer Databasen");
+				Console.WriteLine("4. Edit Employee Database");
+				Console.WriteLine("\n0. Exit");
                 string userInput = Console.ReadLine();
                 Console.Clear();
 
+				RunSwitch(userInput);
             }
         }
 
-        private static void RunSwitch(string userInput)
+        private void RunSwitch(string userInput)
         {
-            Program ui = new Program();
-
             switch (userInput)
             {
                 case "1":
-                    //ui.ShowCustomers();
+                    //ShowCustomers();
                     break;
 
                 case "2":
-                    //ui.ShowEmployees();
+                    //ShowEmployees();
                     break;
                 case "3":
-                    ui.UpdateCustomerDatabase();
-                    break;
+                   UpdateCustomerDatabase();
+                  break;
 
                 case "4":
-                    ui.UpdateCustomerDatabase();
+                    UpdateCustomerDatabase();
                     break;
 
                 case "0":
@@ -62,8 +62,6 @@ namespace Interface {
 
         private void UpdateCustomerDatabase()
         {
-            Program ui = new Program();
-            Database edit = new Database();
             Console.WriteLine("Choose Your Updated Options\n" +
                 "1. Create Customer \n" +
                 "2. Update Customer \n" +
@@ -76,27 +74,24 @@ namespace Interface {
             switch (userInput)
             {
                 case "1":
-                    //edit.CreateCustomer();
+                    //CreateCustomer();
                     break;
 
                 case "2":
-                    //edit.UpdateCustomer();
+                    //UpdateCustomer();
                     break;
 
                 case "3":
-                    //edit.DeleteCustomer();
+                    //DeleteCustomer();
                     break;
 
                 case "0":
-                    ui.Run();
-                    break;
+					return;
             }
         }
 
         private void UpdateEmployeeDatabase()
         {
-            Program ui = new Program();
-            Database edit = new Database();
             Console.WriteLine("Choose Your Updated Options\n" +
                 "1. Create Employee \n" +
                 "2. Update Employee \n" +
@@ -109,20 +104,19 @@ namespace Interface {
             switch (userInput)
             {
                 case "1":
-                    //edit.CreateEmployee();
+                    //CreateEmployee();
                     break;
 
                 case "2":
-                    //edit.UpdateEmployee();
+                    //UpdateEmployee();
                     break;
 
                 case "3":
-                    //edit.DeleteEmployee();
+                    //DeleteEmployee();
                     break;
 
                 case "0":
-                    ui.Run();
-                    break;
+					return;
             }
         }
 
