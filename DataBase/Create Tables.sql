@@ -7,6 +7,7 @@ CREATE TABLE Employee (
 	ID				INT				NOT NULL IDENTITY (1,1),
 	Firstname		NVARCHAR(MAX)	NOT NULL,
 	Lastname		NVARCHAR(MAX)	NOT NULL,
+	Password		NVARCHAR(MAX)	NOT NULL,
 	Email			NVARCHAR(MAX)	NOT NULL,
 	Phone			NVARCHAR(15)	NOT NULL,
 	Permission		INT				NOT NULL,
