@@ -9,6 +9,7 @@ namespace Tests.Core
     public class CustomerTests
     {
         CustomerRepository CustomerRepository = new CustomerRepository();
+		Database DB = new Database();
 
         [TestMethod]
         public void TestSaveCustomerInRepository()
@@ -46,5 +47,10 @@ namespace Tests.Core
 
             Assert.IsTrue(CustomerRepository.Delete(1));
         }
+
+		[TestCleanup]
+		public void ClearDatabase() {
+			DB.RunSP("usp_TruncateCustomers");
+		}
     }
 }

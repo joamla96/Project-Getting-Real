@@ -7,18 +7,72 @@ namespace Core
     {
         private Dictionary<int, Customer> Customers = new Dictionary<int, Customer>();
         private Database DB = new Database();
-        public List<Customer> GetCustomers()
-        {
-            // Convert Dictrionary to List (without having any KeyValuePairs)s
-            List<Customer> CustomerList = new List<Customer>();
-            CustomerList.AddRange(Customers.Values);
 
-            return CustomerList;
-        }
-        public Customer GetCustomer(int ID)
+		public Customer GetCustomer(int id) {
+			Dictionary<string, string> Params = new Dictionary<string, string>();
+			Customer RResult = null;
+			Params.Add("@ID", id.ToString());
+			var Result = DB.GetSP("usp_GetCustomer", Params);
+
+			foreach (var Row in Result) {
+				Address Addr = new Address(
+					int.Parse(Row["HouseNo"]),
+					int.Parse(Row["FloorNo"]),
+					Row["Entrance"],
+					Row["Streetname"],
+					int.Parse(Row["PostCode"]),
+					Row["City"]
+				);
+
+				RResult = new Customer(
+					int.Parse(Row["ID"]),
+					Row["Email"],
+					Row["Password"],
+					Row["Firstname"],
+					Row["Lastname"],
+					Addr,
+					Row["Phone"]
+				);
+			}
+
+			return RResult;
+
+		}
+		public List<Customer> GetCustomers()
         {
-              Dictionary<string,string>
-        }
+			// Convert Dictrionary to List (without having any KeyValuePairs)s
+			//List<Customer> CustomerList = new List<Customer>();
+			//CustomerList.AddRange(Customers.Values);
+			//return CustomerList;
+
+			List<Customer> CustomerList = new List<Customer>();
+
+			var Result = DB.GetSP("usp_GetALLCustomer");
+
+			foreach(var Row in Result) {
+				Address Addr = new Address(
+					int.Parse(Row["HouseNo"]),
+					int.Parse(Row["FloorNo"]),
+					Row["Entrance"],
+					Row["Streetname"],
+					int.Parse(Row["PostCode"]),
+					Row["City"]
+				);
+				Customer C = new Customer(
+					int.Parse(Row["ID"]),
+					Row["Email"],
+					Row["Password"],
+					Row["Firstname"],
+					Row["Lastname"],
+					Addr,
+					Row["Phone"]
+				);
+
+				CustomerList.Add(C);
+			}
+
+			return CustomerList;
+		}
 
         public void SaveCustomer(Customer Customer)
         {
@@ -43,38 +97,46 @@ namespace Core
 
         public void Update(int id, string prop, string newvalue)
         {
-            Customer Customer = this.GetCustomer(id);
+			Dictionary<string, string> Param = new Dictionary<string, string>();
+			Param.Add("@ID", id.ToString());
+			switch (prop) {
+				case "Firstname": Param.Add("@Firstname", newvalue); break;
+				case "Lastname": Param.Add("@Lastname", newvalue); break;
+				case "Email": Param.Add("@Email", newvalue); break;
+				case "password": Param.Add("@Password", newvalue); break;
+				case "Phone": Param.Add("@Phone", newvalue); break;
+				default: throw new Exception("Invalid Property");
+			}
 
-            switch (prop)
-            {
-                case "Firstname": Customer.Firstname = newvalue; break;
-                case "Lastname": Customer.Lastname = newvalue; break;
-                case "Email": Customer.Email = newvalue; break;
-                case "password": Customer.Password = newvalue; break;
-                case "Phone": Customer.Phone = newvalue; break;
-                default: throw new Exception("Invalid Property");
-            }
+			DB.RunSP("UpdateCustomer", Param);
+		}
 
-            this.SaveCustomer(Customer);
-        }
-
-        public void Update(int id, string prop, Address newvalue)
+		public void Update(int id, string prop, Address newvalue)
         {
             if (prop != "Address") throw new Exception("Invalid Property");
-            Customer Customer = this.GetCustomer(id);
-            Customer.Address = newvalue;
+			Dictionary<string, string> Params = new Dictionary<string, string>();
+			Params.Add("@ID", id.ToString());
 
-            this.SaveCustomer(Customer);
+			Params.Add("@HouseNo", newvalue.HouseNo.ToString());
+			Params.Add("@FloorNo", newvalue.FloorNo.ToString());
+			Params.Add("@Entrance", newvalue.Entrance);
+			Params.Add("@Streetname", newvalue.Streetname);
+			Params.Add("@City", newvalue.City);
+			Params.Add("@PostCode", newvalue.PostCode.ToString());
+
+			DB.RunSP("UpdateCustomer", Params);
         }
 
         public bool Delete(int id)
         {
-            if (Customers.ContainsKey(id))
-            {
-                Customers.Remove(id);
-                return true;
-            }
-            else { return false; }
+			Dictionary<string, string> input = new Dictionary<string, string>();
+			input.Add("@ID", id.ToString());
+            DB.RunSP("DeleteCustomer", input);
+			return true;
+
+                //Customers.Remove(id);
+				
+                
         }
     }
 
