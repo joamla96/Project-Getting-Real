@@ -4,114 +4,178 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Core;
+using System.Security;
+using Core.CustomExceptions;
 
 namespace Interface {
 	internal class Program {
-        private static void Main()
-        {
-            Program myProgram = new Program();
-            myProgram.Run();
-        }
+		Dictionary<int, string> CB = new Dictionary<int, string>(); // Console Buffer
+		Employee LoggedIn;
 
-        public void Run()
-        {
-            while (true)
-            {
+		EmployeeRepository RepoEmp = new EmployeeRepository();
+		CustomerRepository RepoCus = new CustomerRepository();
+		private static void Main() {
+			Program myProgram = new Program();
+			myProgram.Run();
+		}
+
+		public void Run() {
+			while (true) {
+				//while (LoggedIn == null) {
+				//	Login();
+				//}
 				Console.Clear();
+				Console.WriteLine("Main Menu\n");
 				Console.WriteLine("Please Choose Your Option");
 				Console.WriteLine("1. Search Customer Database");
 				Console.WriteLine("2. Search Employee Database ");
 				Console.WriteLine("3. Edit Customer Databasen");
 				Console.WriteLine("4. Edit Employee Database");
 				Console.WriteLine("\n0. Exit");
-                string userInput = Console.ReadLine();
-                Console.Clear();
+				string userInput = Console.ReadLine();
+				Console.Clear();
 
 				try {
 					RunSwitch(userInput);
-				} catch(NotImplementedException) {
+				} catch (NotImplementedException) {
 					Console.WriteLine("You accessed an unfinished section.");
 					Console.ReadKey();
 				}
-            }
-        }
+			}
+		}
 
-        private void RunSwitch(string userInput)
-        {
+		private bool Login() {
+			Console.Clear();
+			Console.WriteLine("Login:\n");
+			Console.Write("Username: "); string Username = GetInput();
+			Console.Write("Password: "); SecureString Password = GetPassword();
+
+			try {
+				LoggedIn = RepoEmp.Login(Username, Password.ToString());
+				Password = null; // Lets take the password out of memory when we're done with it.
+				return true;
+			} catch (NoUserException) {
+				Console.WriteLine("\n\nInvalid User Credentials!");
+				Console.ReadKey();
+				return false;
+			}
+
+
+		}
+
+		private void RunSwitch(string userInput) {
 			CustomerUI CUI = new CustomerUI();
 			EmployeeUI EUI = new EmployeeUI();
 
-            switch (userInput)
-            {
-                case "1":
-                    CUI.ShowCustomers();
-                    break;
+			switch (userInput) {
+				case "1": CUI.ShowCustomers(); break;
+				case "2": EUI.ShowEmployees(); break;
+				case "3": CUI.UpdateCustomerDatabase(); break;
+				case "4": EUI.UpdateEmployeeDatabase(); break;
 
-                case "2":
-                    EUI.ShowEmployees();
-                    break;
-                case "3":
-                   CUI.UpdateCustomerDatabase();
-                  break;
+				case "0": Environment.Exit(0); break;
 
-                case "4":
-                    EUI.UpdateEmployeeDatabase();
-                    break;
+				default:
+					Console.WriteLine("Incorrect Input");
+					Console.ReadKey();
+				break;
+			}
+		}
 
-                case "0":
-                    Environment.Exit(0);
-                    break;
+		//private void ShowCustomers()
+		//{
+		//    UI ui = new UI();
+		//    SearchCustomerDatabase searchCustomer = new SearchCustomerDatabase();
+		//    Console.WriteLine("Choose Your Option \n" +
+		//        "1. Show All Customers \n" +
+		//        "0. Back");
 
-                default:
-                    Console.WriteLine("Incorrect Input");
-                    break;
-            }
-        }
+		//    string userInput = Console.ReadLine();
+		//    Console.Clear();
 
-        //private void ShowCustomers()
-        //{
-        //    UI ui = new UI();
-        //    SearchCustomerDatabase searchCustomer = new SearchCustomerDatabase();
-        //    Console.WriteLine("Choose Your Option \n" +
-        //        "1. Show All Customers \n" +
-        //        "0. Back");
+		//    switch (userInput)
+		//    {
+		//        case "1":
+		//            searchCustomer.ShowAllCustomers();
+		//            break;
 
-        //    string userInput = Console.ReadLine();
-        //    Console.Clear();
+		//        case "0":
+		//            ui.Run();
+		//            break;
+		//    }
+		//}
 
-        //    switch (userInput)
-        //    {
-        //        case "1":
-        //            searchCustomer.ShowAllCustomers();
-        //            break;
+		//private void ShowEmployees()
+		//{
+		//    UI ui = new UI();
+		//    SearchEmployeeDatabase searchEmployee = new SearchEmployeeDatabase();
+		//    Console.WriteLine("Choose Your Option \n" +
+		//        "1. Show All Employees \n" +
+		//        "0. Back");
 
-        //        case "0":
-        //            ui.Run();
-        //            break;
-        //    }
-        //}
+		//    string userInput = Console.ReadLine();
+		//    Console.Clear();
 
-        //private void ShowEmployees()
-        //{
-        //    UI ui = new UI();
-        //    SearchEmployeeDatabase searchEmployee = new SearchEmployeeDatabase();
-        //    Console.WriteLine("Choose Your Option \n" +
-        //        "1. Show All Employees \n" +
-        //        "0. Back");
+		//    switch (userInput)
+		//    {
+		//        case "1":
+		//            searchEmployee.ShowAllEmployees();
+		//            break;
 
-        //    string userInput = Console.ReadLine();
-        //    Console.Clear();
+		//        case "0":
+		//            ui.Run();
+		//            break;
+		//    }
+		//}
 
-        //    switch (userInput)
-        //    {
-        //        case "1":
-        //            searchEmployee.ShowAllEmployees();
-        //            break;
+		//private void WriteLine(string Line) {
+		//	int HK = CB.Keys.Last();
+		//	CB.Add(HK++, Line + "\n");
+		//}
 
-        //        case "0":
-        //            ui.Run();
-        //            break;
-        //    }
-        //}
-    }
+		//private void Write(string Line) {
+		//	int HK = CB.Keys.Last();
+		//	CB.Add(HK++, Line);
+		//}
+
+		//private void WriteConsole(bool clear = true) {
+		//	if (clear) Console.Clear();
+		//	foreach (var Line in CB) {
+		//		Console.Write(Line.Value);
+		//	}
+		//}
+
+		//private void Clear() {
+		//	CB.Clear();
+		//}
+
+		private string GetInput(string validation = "") {
+			string input = Console.ReadLine();
+			switch (validation) {
+
+				default:
+					return input;
+
+			}
+		}
+
+		public SecureString GetPassword() { // Thanks StackOverflow: http://stackoverflow.com/questions/3404421/password-masking-console-application
+			var pwd = new SecureString();
+			while (true) {
+				ConsoleKeyInfo i = Console.ReadKey(true);
+				if (i.Key == ConsoleKey.Enter) {
+					break;
+				} else if (i.Key == ConsoleKey.Backspace) {
+					if (pwd.Length > 0) {
+						pwd.RemoveAt(pwd.Length - 1);
+						Console.Write("\b \b");
+					}
+				} else {
+					pwd.AppendChar(i.KeyChar);
+					Console.Write("*");
+				}
+			}
+			return pwd;
+		}
+	}
 }

@@ -18,20 +18,32 @@ namespace Interface {
 
 			switch (userInput) {
 				case "1":
-					//CreateCustomer();
+					CreateCustomer();
 					break;
 
 				case "2":
-					//UpdateCustomer();
+					UpdateCustomer();
 					break;
 
 				case "3":
-					//DeleteCustomer();
+					DeleteCustomer();
 					break;
 
 				case "0":
 					return;
 			}
+		}
+
+		private void DeleteCustomer() {
+			throw new NotImplementedException();
+		}
+
+		private void UpdateCustomer() {
+			throw new NotImplementedException();
+		}
+
+		private void CreateCustomer() {
+			throw new NotImplementedException();
 		}
 
 		internal void ShowCustomers() {

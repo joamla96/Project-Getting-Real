@@ -1,20 +1,20 @@
-﻿using System;
+﻿using Core.CustomExceptions;
+using System;
 using System.Collections.Generic;
+using System.Security;
 
 namespace Core {
 	public class EmployeeRepository {
 		private Dictionary<int, Employee> Employees = new Dictionary<int, Employee>();
 
 		public Employee Login(string Username, string Password) {
-			foreach(KeyValuePair<int, Employee> A in Employees) {
-				Employee Emp = A.Value;
-
+			foreach(Employee Emp in GetEmployees()) {
 				if (Emp.Email == Username
 				&&	Emp.Password == Password) {
 					return Emp;
 				}
 			}
-			throw new Exception("User Not Found");
+			throw new NoUserException();
 		}
 
 		public List<Employee> GetEmployees() {
