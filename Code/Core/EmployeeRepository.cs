@@ -7,6 +7,7 @@ using System.Security;
 namespace Core {
 	public class EmployeeRepository {
 		private Dictionary<int, Employee> Employees = new Dictionary<int, Employee>();
+        Database DB = new Database();
 
 		public Employee Login(string Username, string Password) {
 			var Employees = GetEmployees();
@@ -25,49 +26,125 @@ namespace Core {
 		}
 
 		public List<Employee> GetEmployees() {
-			// Convert Dictrionary to List (without having any KeyValuePairs)s
-			List<Employee> EmpList = new List<Employee>();
-			EmpList.AddRange(Employees.Values);
+            List<Employee> EmployeeList = new List<Employee>();
 
-			return EmpList;
-		}
+            var Result = DB.GetSP("usp_GetALLEmployee");
+
+            foreach (var Row in Result)
+            {
+                Address Addr = new Address(
+                    int.Parse(Row["HouseNo"]),
+                    int.Parse(Row["FloorNo"]),
+                    Row["Entrance"],
+                    Row["Streetname"],
+                    int.Parse(Row["PostCode"]),
+                    Row["City"]
+                );
+                Employee C = new Employee(
+                    int.Parse(Row["ID"]),
+                    Row["Email"],
+                    Row["Password"],
+                    Row["Firstname"],
+                    Row["Lastname"],
+                    Addr,
+                    Row["Phone"],
+                    (Permissions)Enum.Parse(typeof(Permissions), Row["Permission"])
+                );
+
+                EmployeeList.Add(C);
+            }
+
+            return EmployeeList;
+        }
 		public Employee GetEmployee(int ID) {
-			return Employees[ID];
-		}
+            Dictionary<string, string> Params = new Dictionary<string, string>();
+            Employee RResult = null;
+            Params.Add("@ID", ID.ToString());
+            var Result = DB.GetSP("usp_GetEmployee", Params);
+
+            foreach (var Row in Result)
+            {
+                Address Addr = new Address(
+                    int.Parse(Row["HouseNo"]),
+                    int.Parse(Row["FloorNo"]),
+                    Row["Entrance"],
+                    Row["Streetname"],
+                    int.Parse(Row["PostCode"]),
+                    Row["City"]
+                );
+
+                RResult = new Employee(
+                    int.Parse(Row["ID"]),
+                    Row["Email"],
+                    Row["Password"],
+                    Row["Firstname"],
+                    Row["Lastname"],
+                    Addr,
+                    Row["Phone"],
+                    (Permissions)Enum.Parse(typeof(Permissions), Row["Permission"])
+
+                );
+            }
+
+            return RResult;
+        }
 
 		public void SaveEmployee(Employee Emp) {
-			this.Delete(Emp.ID);
-			this.Employees.Add(Emp.ID, Emp);
-		}
+            Dictionary<string, string> param = new Dictionary<string, string>();
+            Address addr = Emp.Address;
+            param.Add("@Firstname", Emp.Firstname);
+            param.Add("@Lastname", Emp.Lastname);
+            param.Add("@Email", Emp.Email);
+            param.Add("@Password", Emp.Password);
+            param.Add("@Phone", Emp.Phone);
+            param.Add("@Permission", Emp.Permissions.ToString());
+            param.Add("@HouseNo", addr.HouseNo.ToString());
+            param.Add("@FloorNo", "" + addr.FloorNo.ToString());
+            param.Add("@Streetname", addr.Streetname);
+            param.Add("@Entrance", "" + addr.Entrance);
+            param.Add("@City", addr.City);
+            param.Add("@PostCode", addr.PostCode.ToString());
+            
+
+            DB.RunSP("usp_SaveEmployee", param);
+        }
 
 		public void Update(int id, string prop, string newvalue) {
-			Employee Emp = this.GetEmployee(id);
+            Dictionary<string, string> Param = new Dictionary<string, string>();
+            Param.Add("@ID", id.ToString());
+            switch (prop)
+            {
+                case "Firstname": Param.Add("@Firstname", newvalue); break;
+                case "Lastname": Param.Add("@Lastname", newvalue); break;
+                case "Email": Param.Add("@Email", newvalue); break;
+                case "Phone": Param.Add("@Phone", newvalue); break;
+                case "Permission": Param.Add("@Permission", newvalue); break;
+                default: throw new Exception("Invalid Property");
+            }
 
-			switch(prop) {
-				case "Firstname": Emp.Firstname = newvalue; break;
-				case "Lastname": Emp.Lastname = newvalue; break;
-				case "Email": Emp.Email = newvalue; break;
-				case "password": Emp.Password = newvalue; break;
-				case "Phone": Emp.Phone = newvalue; break;
-				default: throw new Exception("Invalid Property");
-			}
-
-			this.SaveEmployee(Emp);
-		}
+            DB.RunSP("UpdateEmployee", Param);
+        }
 		
 		public void Update(int id, string prop, Address newvalue) {
-			if (prop != "Address") throw new Exception("Invalid Property");
-			Employee Emp = this.GetEmployee(id);
-			Emp.Address = newvalue;
+            if (prop != "Address") throw new Exception("Invalid Property");
+            Dictionary<string, string> Params = new Dictionary<string, string>();
+            Params.Add("@ID", id.ToString());
 
-			this.SaveEmployee(Emp);
-		}
+            Params.Add("@HouseNo", newvalue.HouseNo.ToString());
+            Params.Add("@FloorNo", newvalue.FloorNo.ToString());
+            Params.Add("@Entrance", newvalue.Entrance);
+            Params.Add("@Streetname", newvalue.Streetname);
+            Params.Add("@City", newvalue.City);
+            Params.Add("@PostCode", newvalue.PostCode.ToString());
+
+            DB.RunSP("UpdateEmployee", Params);
+        }
 
 		public bool Delete(int id) {
-			if (Employees.ContainsKey(id)) {
-				Employees.Remove(id);
-				return true;
-			} else { return false; }
-		}
+            Dictionary<string, string> input = new Dictionary<string, string>();
+            input.Add("@ID", id.ToString());
+            DB.RunSP("DeleteEmployee", input);
+            return true;
+        }
 	}
 }

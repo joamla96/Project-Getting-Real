@@ -7,17 +7,37 @@ namespace Tests.Core {
 	[TestClass]
 	public class EmployeeTests {
 		EmployeeRepository EmployeeRepository = new EmployeeRepository();
-		
-		[TestMethod]
-		public void TestSaveEmployeeInRepository() {
-			Address Address_A = new Address(38, "Grønløkkevej", 6800, "Odense");
-			Employee A = new Employee(1, "test@example.com", "1234", "Test", "User", Address_A, "12344567", Permissions.Employee);
+        Database DB = new Database();
 
-			EmployeeRepository.SaveEmployee(A);
-			List<Employee> EmployeeList = EmployeeRepository.GetEmployees();
+        [TestMethod]
+        public void TestSaveEmployeeInRepository()
+        {
+            Address Address_A = new Address(38, "Grønløkkevej", 6800, "Odense");
+            Employee A = new Employee(1, "test@example.com", "1234", "Test", "User", Address_A, "12344567", Permissions.Employee);
 
-			Assert.IsTrue(EmployeeList.Contains(A));
-		}
+            EmployeeRepository.SaveEmployee(A);
+            List<Employee> EmployeeList = EmployeeRepository.GetEmployees();
+
+            bool EmployeeFound = false;
+
+            foreach (Employee X in EmployeeList)
+            {
+                Address XA = X.Address;
+                if (
+                    X.ID == A.ID
+                && X.Email == A.Email
+                && X.Firstname == A.Firstname
+                && X.Lastname == A.Lastname
+                && X.Phone == A.Phone
+                && X.Password == A.Password
+                && X.Permissions == A.Permissions
+                && XA.HouseNo == Address_A.HouseNo
+                && XA.Streetname == Address_A.Streetname
+                && XA.PostCode == Address_A.PostCode
+                && XA.City == Address_A.City
+                ) { EmployeeFound = true; }
+            }
+        }
 
 		[TestMethod]
 		public void TestLogin() {
@@ -67,6 +87,8 @@ namespace Tests.Core {
 
 			Employee B = EmployeeRepository.GetEmployee(1);
 			Assert.AreEqual(B.Firstname, "NewFirstName");
+
+
 		}
 
 		[TestMethod]
@@ -77,5 +99,11 @@ namespace Tests.Core {
 
 			Assert.IsTrue(EmployeeRepository.Delete(1));
 		}
-	}
+
+        [TestCleanup]
+        public void ClearDatabase()
+        {
+            DB.RunSP("usp_Employees");
+        }
+    }
 }
