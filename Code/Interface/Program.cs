@@ -16,7 +16,7 @@ namespace Interface {
 			myProgram.Run();
 		}
 
-		public void Run() {
+		internal void Run() {
 			while (true) {
 				//while (LoggedIn == null) {
 				//	Login();
