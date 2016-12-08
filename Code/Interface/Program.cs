@@ -178,7 +178,7 @@ namespace Interface {
 			return input;
 		}
 
-		public SecureString GetPassword() { // Thanks StackOverflow: http://stackoverflow.com/questions/3404421/password-masking-console-application
+		internal SecureString GetPassword() { // Thanks StackOverflow: http://stackoverflow.com/questions/3404421/password-masking-console-application
 			var pwd = new SecureString();
 			while (true) {
 				ConsoleKeyInfo i = Console.ReadKey(true);
