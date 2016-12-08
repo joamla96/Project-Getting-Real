@@ -63,8 +63,6 @@ namespace Interface {
 				// TODO: Allow registration of first admin, instead of giving this error.
 				return false;
 			}
-
-
 		}
 
 		private void RunSwitch(string userInput) {

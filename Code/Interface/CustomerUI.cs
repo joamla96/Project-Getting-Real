@@ -18,20 +18,11 @@ namespace Interface {
 			Console.Clear();
 
 			switch (userInput) {
-				case "1":
-					CreateCustomer();
-					break;
+				case "1": CreateCustomer();	break;
+				case "2": UpdateCustomer(); break;
+				case "3": DeleteCustomer(); break;
 
-				case "2":
-					UpdateCustomer();
-					break;
-
-				case "3":
-					DeleteCustomer();
-					break;
-
-				case "0":
-					return;
+				case "0": return;
 			}
 		}
 
