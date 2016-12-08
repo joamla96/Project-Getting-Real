@@ -34,7 +34,7 @@ namespace Interface {
 
 				try {
 					RunSwitch(userInput);
-				} catch (NotImplementedException) {
+				} catch (NotImplementedException) { // BEWARE: Can cause debugging issues :')
 					Console.WriteLine("You accessed an unfinished section.");
 					Console.ReadKey();
 				}
@@ -163,7 +163,7 @@ namespace Interface {
 					if (!Valid.Text(input)) return GetInput(validation, "This field only takes text!");
 					break;
 
-				case "email": //TODO: Make Email Validation
+				case "email": // TODO: Make Email Validation
 					if (!Valid.Email(input)) return GetInput(validation, "Please type valid email!");
 					break;
 

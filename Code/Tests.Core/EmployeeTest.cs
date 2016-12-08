@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Core.CustomExceptions;
 
 namespace Tests.Core {
 	[TestClass]
@@ -67,10 +68,8 @@ namespace Tests.Core {
 			try {
 				Employee AL = EmployeeRepository.Login("tes3t@example.com", "1234");
 				Assert.IsTrue(false);
-			} catch(Exception e) {
-				if(e.Message == "User Not Found") {
-					Assert.IsTrue(true);
-				}
+			} catch(InvalidLoginException) {
+				Assert.IsTrue(true);
 			}
 		}
 
@@ -103,7 +102,7 @@ namespace Tests.Core {
         [TestCleanup]
         public void ClearDatabase()
         {
-            DB.RunSP("usp_Employees");
+            DB.RunSP("usp_TruncateEmployees");
         }
     }
 }
