@@ -167,10 +167,9 @@ namespace Interface {
 					if (!Valid.Email(input)) return GetInput(validation, "Please type valid email!");
 					break;
 
-
 				default: // Lets assume the programmer wants to validate input, if they put a text in the validation field.
-					throw new Exception("A validation text was inputted, but no case for it?");
-
+					if(validation != "") throw new Exception("A validation text was inputted, but no case for it?");
+					break;
 			}
 
 			return input;

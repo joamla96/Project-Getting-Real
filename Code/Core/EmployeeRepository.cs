@@ -28,16 +28,16 @@ namespace Core {
 		public List<Employee> GetEmployees() {
             List<Employee> EmployeeList = new List<Employee>();
 
-            var Result = DB.GetSP("usp_GetALLEmployee");
-
+            var Result = DB.GetSP("usp_GetALLEmployees");
+			
             foreach (var Row in Result)
             {
-                Address Addr = new Address(
-                    int.Parse(Row["HouseNo"]),
-                    int.Parse(Row["FloorNo"]),
+				Address Addr = new Address(
+					int.Parse(Row["HouseNo"].ToString()),
+                    int.Parse(Row["FloorNo"].ToString()),
                     Row["Entrance"],
                     Row["Streetname"],
-                    int.Parse(Row["PostCode"]),
+                    int.Parse(Row["PostCode"].ToString()),
                     Row["City"]
                 );
                 Employee C = new Employee(
@@ -48,7 +48,7 @@ namespace Core {
                     Row["Lastname"],
                     Addr,
                     Row["Phone"],
-                    (Permissions)Enum.Parse(typeof(Permissions), Row["Permission"])
+                    int.Parse(Row["Permission"].ToString())
                 );
 
                 EmployeeList.Add(C);
@@ -81,7 +81,7 @@ namespace Core {
                     Row["Lastname"],
                     Addr,
                     Row["Phone"],
-                    (Permissions)Enum.Parse(typeof(Permissions), Row["Permission"])
+                    int.Parse(Row["Permission"])
 
                 );
             }
