@@ -107,7 +107,7 @@ group=3</panel_attributes>
 ID: int
 StartDate: Datetime
 FinishDate: Datetime
-Services: Service[]
+Tasks: Task[]
 --
 New(ID: int, date: string, 
 startingTime: string, 
