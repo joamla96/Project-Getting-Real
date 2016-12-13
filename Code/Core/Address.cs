@@ -22,5 +22,16 @@
 			this.City = city;
 			this.PostCode = postalcode;
 		}
+
+		public override string ToString() {
+			string output = "HouseNo: " + this.HouseNo + "\n" +
+				"FloorNo: " + this.FloorNo + "\n" +
+				"Entrance: " + this.Entrance + "\n" +
+				"Streetname: " + this.Streetname + "\n" +
+				"City: " + this.City + "\n" +
+				"PostCode: " + this.PostCode;
+
+			return output;
+		}
 	}
 }

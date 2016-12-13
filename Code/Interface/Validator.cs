@@ -3,11 +3,15 @@
 namespace Interface {
 	internal class Validator {
 		internal bool Text(string input) {
-			throw new NotImplementedException();
+			return true; //TODO
 		}
 
 		internal bool Email(string input) {
-			throw new NotImplementedException();
+			return true; //TODO
+		}
+
+		internal bool Number(string input) {
+			return true; //TODO
 		}
 	}
 }

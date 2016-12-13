@@ -17,5 +17,24 @@
             this.Address = address;
             this.Phone = phone;
         }
-    }
+
+		public Customer(string email, string firstname, string lastname, Address address, string phone) {
+			this.Email = email;
+			this.Firstname = firstname;
+			this.Lastname = lastname;
+			this.Address = address;
+			this.Phone = phone;
+		}
+
+		public override string ToString() {
+			string output = "ID: " + this.ID + "\n" +
+				"Email: " + this.Email + "\n" +
+				"Firstname: " + this.Firstname + "\n" +
+				"Lastname: " + this.Lastname + "\n" +
+				"Address: " + this.Address.ToString() + "\n" +
+				"Phone: " + this.Phone + "\n";
+
+			return output;
+		}
+	}
 }

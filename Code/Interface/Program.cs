@@ -32,12 +32,12 @@ namespace Interface {
 				string userInput = Console.ReadLine();
 				Console.Clear();
 
-				try {
+				//try {
 					RunSwitch(userInput);
-				} catch (NotImplementedException) { // BEWARE: Can cause debugging issues :')
-					Console.WriteLine("You accessed an unfinished section.");
-					Console.ReadKey();
-				}
+				//} catch (NotImplementedException) { // BEWARE: Can cause debugging issues :')
+				//	Console.WriteLine("You accessed an unfinished section.");
+				//	Console.ReadKey();
+				//}
 			}
 		}
 
@@ -165,6 +165,16 @@ namespace Interface {
 
 				case "email": // TODO: Make Email Validation
 					if (!Valid.Email(input)) return GetInput(validation, "Please type valid email!");
+					break;
+
+				case "number": //TODO: Make Number Validation
+					if (!Valid.Number(input)) return GetInput(validation, "Please type a number only!");
+					break;
+
+				case "yn":
+					break;
+
+				case "phone":
 					break;
 
 				default: // Lets assume the programmer wants to validate input, if they put a text in the validation field.
