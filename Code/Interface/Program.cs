@@ -92,15 +92,15 @@ namespace Interface {
 			Validator Valid = new Validator();
 			string input = Console.ReadLine();
 			switch (validation) {
-				case "text": // TODO: Make some validation for text only
+				case "text":
 					if (!Valid.Text(input)) return GetInput(validation, "This field only takes text!");
 					break;
 
-				case "email": // TODO: Make Email Validation
+				case "email":
 					if (!Valid.Email(input)) return GetInput(validation, "Please type valid email!");
 					break;
 
-				case "number": //TODO: Make Number Validation
+				case "number":
 					if (!Valid.Number(input)) return GetInput(validation, "Please type a number only!");
 					break;
 
@@ -109,7 +109,7 @@ namespace Interface {
 					break;
 
 				case "phone":
-					if(!Valid.Phone(input)) return GetInput(validation, "Please type a valid Phone Number.")
+					if (!Valid.Phone(input)) return GetInput(validation, "Please type a valid Phone Number.");
 					break;
 
 				default: // Lets assume the programmer wants to validate input, if they put a text in the validation field.

@@ -45,12 +45,14 @@ namespace Interface {
 			Console.WriteLine("Are you sure you wish to delete this customer? (Y/N)");
 			string Menu = Program.GetInput("yn");
 
-			switch(Menu.ToUpper()) {
-				case "Y":
+			switch(Menu.ToLower()) {
+				case "y":
+				case "yes":
 					RepoCus.Delete(CustomerID);
 					break;
 
-				case "N":
+				case "n":
+				case "no":
 					Console.WriteLine("Aborted Deletion...");
 					Console.ReadKey();
 					break;
