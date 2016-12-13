@@ -105,9 +105,11 @@ namespace Interface {
 					break;
 
 				case "yn":
+					if (!Valid.YesNo(input)) return GetInput(validation, "Please type either Yes/y/No/n.");
 					break;
 
 				case "phone":
+					if(!Valid.Phone(input)) return GetInput(validation, "Please type a valid Phone Number.")
 					break;
 
 				default: // Lets assume the programmer wants to validate input, if they put a text in the validation field.
