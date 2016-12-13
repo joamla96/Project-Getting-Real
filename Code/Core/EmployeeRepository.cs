@@ -117,6 +117,7 @@ namespace Core {
                 case "Firstname": Param.Add("@Firstname", newvalue); break;
                 case "Lastname": Param.Add("@Lastname", newvalue); break;
                 case "Email": Param.Add("@Email", newvalue); break;
+				case "Password": Param.Add("@Password", newvalue); break; //@L
                 case "Phone": Param.Add("@Phone", newvalue); break;
                 case "Permission": Param.Add("@Permission", newvalue); break;
                 default: throw new Exception("Invalid Property");
