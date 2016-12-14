@@ -198,7 +198,7 @@ namespace Interface
 			RepoEmp.Update(original.ID, "Firstname", newFirstname);
 		}
 
-		private void CreateEmployee()
+		internal void CreateEmployee()
 		{
 			Console.Clear();
 			Console.WriteLine("Create new Employee\n");
@@ -206,14 +206,14 @@ namespace Interface
 			Console.Write("\nFirstname: "); string Firstname = Program.GetInput("text");
 			Console.Write("\nLastname: "); string Lastname = Program.GetInput("text");
 			Console.Write("\nEmail: "); string Email = Program.GetInput("email");
-			Console.Write("\nPassword: "); string Password = Program.GetInput("password");
+			Console.Write("\nPassword: "); string Password = Program.GetInput();
 			Console.Write("\nPhone: "); string Phone = Program.GetInput("phone");
 			Console.Write("\nHouse Number:"); int HouseNo = int.Parse(Program.GetInput("number"));
 			Console.Write("\nFloor Number:"); int FloorNo = int.Parse(Program.GetInput("number"));
 			Console.Write("\nEntrance:"); string Entrance = Program.GetInput("text");
 			Console.Write("\nStreetname:"); string Streetname = Program.GetInput("text");
 			Console.Write("\nCity:"); string City = Program.GetInput("text");
-			Console.Write("\nPostCode:"); int PostCode = int.Parse(Program.GetInput("text"));
+			Console.Write("\nPostCode:"); int PostCode = int.Parse(Program.GetInput("number"));
 			Console.Write("\nPermission:"); int Permission = int.Parse(Program.GetInput("number"));
 
 

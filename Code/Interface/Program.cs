@@ -18,11 +18,12 @@ namespace Interface {
 
 		internal void Run() {
 			while (true) {
-				//while (LoggedIn == null) {
-				//	Login();
-				//}
+				while (LoggedIn == null) {
+					Login();
+				}
 				Console.Clear();
-				Console.WriteLine("Main Menu\n");
+				Console.WriteLine("Schedule Management\nMain Menu");
+				Console.WriteLine("Welcome, " + LoggedIn.Firstname + "\n");
 				Console.WriteLine("Please Choose Your Option");
 				Console.WriteLine("1. Search Customer Database");
 				Console.WriteLine("2. Search Employee Database ");
@@ -45,10 +46,10 @@ namespace Interface {
 			Console.Clear();
 			Console.WriteLine("Login:\n");
 			Console.Write("Username: "); string Username = GetInput();
-			Console.Write("Password: "); SecureString Password = GetPassword();
+			Console.Write("Password: "); string Password = GetInput();
 
 			try {
-				LoggedIn = RepoEmp.Login(Username, Password.ToString());
+				LoggedIn = RepoEmp.Login(Username, Password);
 				Password = null; // Lets take the password out of memory when we're done with it.
 				return true;
 			} catch (InvalidLoginException) {
@@ -56,11 +57,8 @@ namespace Interface {
 				Console.ReadKey();
 				return false;
 			} catch (NoUserException) {
-				Console.WriteLine("\n\nNo Users found in System!");
-				Console.WriteLine("Please, contact system admin.");
-				Console.ReadKey();
-
-				// TODO: Allow registration of first admin, instead of giving this error.
+				EmployeeUI EUI = new EmployeeUI();
+				EUI.CreateEmployee();
 				return false;
 			}
 		}
@@ -120,23 +118,5 @@ namespace Interface {
 			return input;
 		}
 
-		internal SecureString GetPassword() { // Thanks StackOverflow: http://stackoverflow.com/questions/3404421/password-masking-console-application
-			var pwd = new SecureString();
-			while (true) {
-				ConsoleKeyInfo i = Console.ReadKey(true);
-				if (i.Key == ConsoleKey.Enter) {
-					break;
-				} else if (i.Key == ConsoleKey.Backspace) {
-					if (pwd.Length > 0) {
-						pwd.RemoveAt(pwd.Length - 1);
-						Console.Write("\b \b");
-					}
-				} else {
-					pwd.AppendChar(i.KeyChar);
-					Console.Write("*");
-				}
-			}
-			return pwd;
-		}
 	}
 }

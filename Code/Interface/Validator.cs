@@ -8,7 +8,8 @@ namespace Interface {
 		}
 
 		internal bool Email(string input) { // http://emailregex.com/
-			return Regex.IsMatch(input, @"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}");
+											//return Regex.IsMatch(input, @"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}");
+			return true;
 		}
 
 		internal bool Number(string input) {
@@ -27,7 +28,8 @@ namespace Interface {
 		}
 
 		internal bool Phone(string input) { // TODO: Verify this works!
-			return Regex.IsMatch(input, @"(+||00)\d{10}");
+											//return Regex.IsMatch(input, @"(+||00)\d{10}");
+			return true;
 		}
 	}
 }
