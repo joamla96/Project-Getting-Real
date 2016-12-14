@@ -2,6 +2,7 @@
 	DROP TABLE Customer;
 	DROP TABLE Task;
 	DROP TABLE Schedule;
+	DROP TABLE Schedule_Employees;
 
 CREATE TABLE Employee (
 	ID				INT				NOT NULL IDENTITY (1,1),
@@ -46,6 +47,19 @@ CONSTRAINT Task_PK PRIMARY KEY (ID)
 CREATE TABLE Schedule (
 	ID				INT				NOT NULL IDENTITY (1,1),
 	StartDate		DATETIME2		NOT NULL,
-	FinishDate		DATETIME2		NOT NULL,				
-CONSTRAINT	schedule_PK PRIMARY KEY (ID)
+	FinishDate		DATETIME2		NOT NULL,
+	CustomerID		INT				NOT NULL,				
+CONSTRAINT	schedule_PK PRIMARY KEY (ID),
+CONSTRAINT	scheCust_FK	FOREIGN KEY (CustomerID)
+			REFERENCES Customer(ID)
+);
+
+CREATE TABLE Schedule_Employees (
+	ScheduleID		INT		NOT NULL,
+	EmployeeID		INT		NOT NULL,
+CONSTRAINT schemp_PK		PRIMARY KEY(ScheduleID, EmployeeID),
+CONSTRAINT schemp_sch_FK	FOREIGN KEY(ScheduleID)
+			REFERENCES Schedule(ID),
+CONSTRAINT schemp_emp_FK	FOREIGN KEY(EmployeeID)
+			REFERENCES Employee(ID)
 );
