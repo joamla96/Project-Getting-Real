@@ -46,7 +46,7 @@ namespace Interface {
 			Console.Clear();
 			Console.WriteLine("Login:\n");
 			Console.Write("Username: "); string Username = GetInput();
-			Console.Write("Password: "); string Password = GetInput();
+			Console.Write("Password: "); string Password = GetPassword();
 
 			try {
 				LoggedIn = RepoEmp.Login(Username, Password);
@@ -116,6 +116,25 @@ namespace Interface {
 			}
 
 			return input;
+		}
+
+		internal SecureString GetPassword() { // Thanks StackOverflow: http://stackoverflow.com/questions/3404421/password-masking-console-application
+			var pwd = new SecureString();
+			while (true) {
+				ConsoleKeyInfo i = Console.ReadKey(true);
+				if (i.Key == ConsoleKey.Enter) {
+					break;
+				} else if (i.Key == ConsoleKey.Backspace) {
+					if (pwd.Length > 0) {
+						pwd.RemoveAt(pwd.Length - 1);
+						Console.Write("\b \b");
+					}
+				} else {
+					pwd.AppendChar(i.KeyChar);
+					Console.Write("*");
+				}
+			}
+			return pwd;
 		}
 
 	}
