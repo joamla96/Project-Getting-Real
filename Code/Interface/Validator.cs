@@ -7,13 +7,13 @@ namespace Interface {
 			return Regex.IsMatch(input, @"^[a-zA-Z]+$");
 		}
 
+		internal bool Number(string input) {
+			return Regex.IsMatch(input, @"^[0-9]+$");
+		}
+
 		internal bool Email(string input) { // http://emailregex.com/
 											//return Regex.IsMatch(input, @"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}");
 			return true;
-		}
-
-		internal bool Number(string input) {
-			return Regex.IsMatch(input, @"^[0-9]+$");
 		}
 
 		internal bool YesNo(string input) {

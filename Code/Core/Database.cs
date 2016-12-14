@@ -8,11 +8,6 @@ namespace Core {
 		private const string ConnInfo = "Server=ealdb1.eal.local; Database=ejl86_db; User Id=ejl86_usr; Password=Baz1nga86";
 		private SqlConnection Conn;
 
-		//Database()
-		//{
-		//    Conn = new SqlConnection(ConnInfo);
-		//}
-
 		public void RunSP(string name, Dictionary<string, string> param = null) {
 			using (Conn = new SqlConnection(ConnInfo)) {
 				SqlCommand cmd = new SqlCommand(name, this.Conn);
