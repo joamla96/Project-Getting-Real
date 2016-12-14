@@ -26,8 +26,8 @@ namespace Interface {
 			else return false;
 		}
 
-		internal bool Phone(string input) {
-			return true; //TODO
+		internal bool Phone(string input) { // TODO: Verify this works!
+			return Regex.IsMatch(input, @"(+||00)\d{10}");
 		}
 	}
 }
