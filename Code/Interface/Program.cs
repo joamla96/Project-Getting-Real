@@ -64,24 +64,19 @@ namespace Interface {
 
 				try {
 					RunSwitch(userInput);
+				} catch (NotImplementedException) { // BEWARE: Can cause debugging issues :')
+					Console.WriteLine("You accessed an unfinished section.");
+					Console.ReadKey();
+				} catch (Exception e) {  // BEWARE: Can cause debuggin issues :)
+					Console.Clear();
+					Console.WriteLine("An exception was thrown in the program.");
+					Console.WriteLine("Please contact a system administrator.");
+
+					Console.WriteLine("\nException Message:\n" + e.Message);
+					Console.WriteLine(e.StackTrace);
+
+					Console.ReadKey();
 				} 
-				//catch (NotImplementedException) { // BEWARE: Can cause debugging issues :')
-				//	Console.WriteLine("You accessed an unfinished section.");
-				//	Console.ReadKey();
-				//}
-				//catch (Exception e) {  // BEWARE: Can cause debuggin issues :)
-				//	Console.Clear();
-				//	Console.WriteLine("An exception was thrown in the program.");
-				//	Console.WriteLine("Please contact a system administrator.");
-
-				//	Console.WriteLine("\nException Message:\n" + e.Message);
-				//	Console.WriteLine(e.StackTrace);
-
-				//	Console.ReadKey();
-				//}
-				finally {
-
-				}
 			}
 		}
 
