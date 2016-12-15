@@ -14,7 +14,25 @@ namespace Interface {
 		CustomerRepository RepoCus = new CustomerRepository();
 		private static void Main() {
 			Program myProgram = new Program();
+			//myProgram.Init();
 			myProgram.Run();
+		}
+
+		internal void Init() {
+			Address Address = new Address(38, 0, "none", "Greenstreet", 5000, "Odense");
+			Customer CA = new Customer("customer1@email.com", "First", "Customer", Address, "61616161");
+			Customer CB = new Customer("customer2@email.com", "Second", "Customer", Address, "61616161");
+			Customer CC = new Customer("customer3@email.com", "Third", "Customer", Address, "61616161");
+
+			Employee EA = new Employee("manager@email.com", "1234", "First", "Manager", Address, "61616161", 1);
+			Employee EB = new Employee("employee@email.com", "1234", "Second", "Employee", Address, "61616161", 1);
+
+			RepoCus.SaveCustomer(CA);
+			RepoCus.SaveCustomer(CB);
+			RepoCus.SaveCustomer(CC);
+
+			RepoEmp.SaveEmployee(EA);
+			RepoEmp.SaveEmployee(EB);
 		}
 
 		internal void Run() {
@@ -23,35 +41,46 @@ namespace Interface {
 				while (LoggedIn == null) {
 					Login();
 				}
-				Console.Clear();
-				Console.WriteLine("Schedule Management\nMain Menu");
-				Console.WriteLine("Welcome, " + LoggedIn.Firstname + "\n");
-				Console.WriteLine("Please Choose Your Option");
-				Console.WriteLine("1. Search Customer Database");
-				Console.WriteLine("2. Search Employee Database ");
-				Console.WriteLine("3. Edit Customer Databasen");
-				Console.WriteLine("4. Edit Employee Database");
-				Console.WriteLine("5. See Schedule");
-				Console.WriteLine("6. Edit Schedule");
-				Console.WriteLine("\n0. Exit");
-				string userInput = Console.ReadLine();
-				Console.Clear();
+
+				string userInput;
+				if (LoggedIn.Permissions == 2) {
+					userInput = "5";
+				} else {
+
+					Console.Clear();
+					Console.WriteLine("Schedule Management\nMain Menu");
+					Console.WriteLine("Welcome, " + LoggedIn.Firstname + "\n");
+					Console.WriteLine("Please Choose Your Option");
+					Console.WriteLine("1. Search Customer Database");
+					Console.WriteLine("2. Search Employee Database ");
+					Console.WriteLine("3. Edit Customer Databasen");
+					Console.WriteLine("4. Edit Employee Database");
+					Console.WriteLine("5. Show Schedule");
+					Console.WriteLine("6. Edit Schedule");
+					Console.WriteLine("\n0. Exit");
+					userInput = Console.ReadLine();
+					Console.Clear();
+				}
 
 				try {
 					RunSwitch(userInput);
-				} //catch (NotImplementedException) { // BEWARE: Can cause debugging issues :')
+				} 
+				//catch (NotImplementedException) { // BEWARE: Can cause debugging issues :')
 				//	Console.WriteLine("You accessed an unfinished section.");
 				//	Console.ReadKey();
 				//}
-				catch (Exception e) {  // BEWARE: Can cause debuggin issues :)
-					Console.Clear();
-					Console.WriteLine("An exception was thrown in the program.");
-					Console.WriteLine("Please contact a system administrator.");
+				//catch (Exception e) {  // BEWARE: Can cause debuggin issues :)
+				//	Console.Clear();
+				//	Console.WriteLine("An exception was thrown in the program.");
+				//	Console.WriteLine("Please contact a system administrator.");
 
-					Console.WriteLine("\nException Message:\n" + e.Message);
-					Console.WriteLine(e.StackTrace);
+				//	Console.WriteLine("\nException Message:\n" + e.Message);
+				//	Console.WriteLine(e.StackTrace);
 
-					Console.ReadKey();
+				//	Console.ReadKey();
+				//}
+				finally {
+
 				}
 			}
 		}
@@ -71,8 +100,13 @@ namespace Interface {
 				Console.ReadKey();
 				return false;
 			} catch (NoUserException) {
-				EmployeeUI EUI = new EmployeeUI();
-				EUI.CreateEmployee();
+				bool Debug = true;
+				if (Debug) {
+					this.Init();
+				} else {
+					EmployeeUI EUI = new EmployeeUI();
+					EUI.CreateEmployee();
+				}
 				return false;
 			}
 		}
@@ -87,7 +121,8 @@ namespace Interface {
 				case "2": EUI.ShowEmployees(); break;
 				case "3": CUI.UpdateCustomerDatabase(); break;
 				case "4": EUI.UpdateEmployeeDatabase(); break;
-				case "5": SUI.SeeSchedule();  break;
+				case "5": SUI.ShowSchedule(LoggedIn);  break;
+				case "6": SUI.ScheduleMenu(); break;
 
 				case "0": ProgramRunning = false; break;
 
@@ -124,6 +159,10 @@ namespace Interface {
 
 				case "phone":
 					if (!Valid.Phone(input)) return GetInput(validation, "Please type a valid Phone Number.");
+					break;
+
+				case "date":
+					if (!Valid.Date(input)) return GetInput(validation, "Please input valid date format (dd/mm/yyyy hh:mm eg. 29/02/1996 14:30)");
 					break;
 
 				default: // Lets assume the programmer wants to validate input, if they put a text in the validation field.

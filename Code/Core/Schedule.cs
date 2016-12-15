@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace Core {
 	public class Schedule {
@@ -28,6 +26,27 @@ namespace Core {
 			this.Tasks = tasks;
 			this.Customer = customer;
 			this.Employees = employees;
+		}
+
+		public override string ToString() {
+			StringWriter SW = new StringWriter();
+
+			SW.WriteLine("Schedule ID: " + this.ID);
+			SW.WriteLine("Customer: " + this.Customer.ToString());
+			SW.WriteLine("Start Date: " + this.StartDate.ToString("dd/mm/yyy hh:mm"));
+			SW.WriteLine("Finish Date: " + this.FinishDate.ToString("dd/mm/yyy hh:mm"));
+
+			SW.WriteLine("Tasks:");
+			foreach(Task Task in this.Tasks) {
+				SW.WriteLine(" - " + Task.ToString());
+			}
+
+			SW.WriteLine("Employees:");
+			foreach(Employee Emp in this.Employees) {
+				SW.WriteLine(" - " + Emp.Firstname + " " + Emp.Lastname);
+			}
+
+			return SW.ToString();
 		}
 	}
 }

@@ -52,11 +52,16 @@ namespace Core {
 
 		public void SaveSchedule(Schedule Schedule) {
 			Dictionary<string, string> Params = new Dictionary<string, string>();
-			Params.Add("@StartDate", Schedule.StartDate.ToString("YYYY-MM-DD hh:mm:ss"));
-			Params.Add("@FinishDate", Schedule.FinishDate.ToString("YYYY-MM-DDThh:mm:ss"));
+			Params.Add("@StartDate", Schedule.StartDate.ToString("yyyy-mm-dd hh:mm:ss"));
+			Params.Add("@FinishDate", Schedule.FinishDate.ToString("yyyy-mm-dd hh:mm:ss"));
 			Params.Add("@CustomerID", Schedule.Customer.ID.ToString());
 
-			var ScheduleReturn = DB.GetSP("usp_SaveSchedule", Params);
+			List<Dictionary<string, string>> ScheduleReturn;
+			try {
+				ScheduleReturn = DB.GetSP("usp_SaveSchedule", Params);
+			} catch(Exception e) {
+				throw e;
+			}
 
 			int ScheduleID = int.Parse(ScheduleReturn[0]["LastID"]);
 
@@ -65,7 +70,11 @@ namespace Core {
 				Params.Add("@ScheduleID", ScheduleID.ToString());
 				Params.Add("@Description", Task.Description);
 
-				DB.RunSP("usp_SaveTask", Params);
+				try {
+					DB.RunSP("usp_SaveTask", Params);
+				} catch (Exception e) {
+					throw e;
+				}
 			}
 
 			foreach(Employee Emp in Schedule.Employees) {
@@ -73,8 +82,40 @@ namespace Core {
 				Params.Add("@ScheduleID", ScheduleID.ToString());
 				Params.Add("@EmployeeID", Emp.ID.ToString());
 
-				DB.RunSP("usp_SaveScheduleEmployee", Params);
+				try {
+					DB.RunSP("usp_SaveScheduleEmployee", Params);
+				} catch (Exception e) {
+					throw e;
+				}
 			}
+		}
+
+		public List<Schedule> GetScheduleEmployee(int employeeID) {
+			Dictionary<string, string> Param = new Dictionary<string, string>();
+			List<Schedule> Schedules = new List<Schedule>();
+			Param.Add("@ID", employeeID.ToString());
+			var ScheduleIDs = DB.GetSP("usp_GetEmployeeSchedule", Param);
+
+			foreach(Dictionary<string, string> ScheduleID in ScheduleIDs) {
+				Schedules.Add(this.GetSchedule(int.Parse(ScheduleID["ScheduleID"])));
+			}
+
+			return Schedules;
+		}
+
+		public List<Schedule> GetScheduleEmployee(int employeeID, DateTime FromDate, DateTime ToDate) {
+			Dictionary<string, string> Param = new Dictionary<string, string>();
+			List<Schedule> Schedules = new List<Schedule>();
+			Param.Add("@ID", employeeID.ToString());
+			Param.Add("@StartDate", FromDate.ToString("yyyy-mm-dd hh:mm:ss"));
+			Param.Add("@FinishDate", ToDate.ToString("yyyy-mm-dd hh:mm:ss"));
+			var ScheduleIDs = DB.GetSP("usp_GetEmployeeScheduleWithDate", Param);
+
+			foreach (Dictionary<string, string> ScheduleID in ScheduleIDs) {
+				Schedules.Add(this.GetSchedule(int.Parse(ScheduleID["ScheduleID"])));
+			}
+
+			return Schedules;
 		}
 	}
 }

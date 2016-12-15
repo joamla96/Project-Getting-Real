@@ -31,5 +31,9 @@ namespace Interface {
 											//return Regex.IsMatch(input, @"(+||00)\d{10}");
 			return true;
 		}
+
+		internal bool Date(string input) { // TODO
+			return true;
+		}
 	}
 }

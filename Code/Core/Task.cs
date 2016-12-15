@@ -17,5 +17,9 @@ namespace Core {
 		public Task(string description) {
 			this.Description = description;
 		}
+
+		public override string ToString() {
+			return this.Description;
+		}
 	}
 }

@@ -18,15 +18,21 @@ namespace Interface {
 				Console.WriteLine("1. Create new Schedule");
 				Console.WriteLine("2. Update Scedule");
 				Console.WriteLine("3. Delete Schedule");
+				Console.WriteLine("4. Show Schedule");
 
 				switch(Program.GetInput("number")) {
 					case "1": CreateNewSchedule(); break;
 					case "2": UpdateSchedule(); break;
 					case "3": DeleteSchedule(); break;
+					case "4": ShowWholeSchedule(); break;
 				}
 			}
 
 
+		}
+
+		private void ShowWholeSchedule() {
+			throw new NotImplementedException();
 		}
 
 		private void DeleteSchedule() {
@@ -99,8 +105,12 @@ namespace Interface {
 			return Employees;
 		}
 
-		internal void SeeSchedule() {
-			throw new NotImplementedException();
+		internal void ShowSchedule(Employee Employee) {
+			List<Schedule> Schedules = RepoSch.GetScheduleEmployee(Employee.ID);
+
+			foreach(Schedule Schedule in Schedules) {
+				Console.WriteLine(Schedule.ToString());
+			}
 		}
 	}
 }
