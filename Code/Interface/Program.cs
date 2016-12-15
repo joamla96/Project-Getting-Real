@@ -31,6 +31,8 @@ namespace Interface {
 				Console.WriteLine("2. Search Employee Database ");
 				Console.WriteLine("3. Edit Customer Databasen");
 				Console.WriteLine("4. Edit Employee Database");
+				Console.WriteLine("5. See Schedule");
+				Console.WriteLine("6. Edit Schedule");
 				Console.WriteLine("\n0. Exit");
 				string userInput = Console.ReadLine();
 				Console.Clear();
@@ -78,12 +80,14 @@ namespace Interface {
 		private void RunSwitch(string userInput) {
 			CustomerUI CUI = new CustomerUI();
 			EmployeeUI EUI = new EmployeeUI();
+			ScheduleUI SUI = new ScheduleUI();
 
 			switch (userInput) {
 				case "1": CUI.ShowCustomers(); break;
 				case "2": EUI.ShowEmployees(); break;
 				case "3": CUI.UpdateCustomerDatabase(); break;
 				case "4": EUI.UpdateEmployeeDatabase(); break;
+				case "5": throw new NotImplementedException();  break;
 
 				case "0": ProgramRunning = false; break;
 

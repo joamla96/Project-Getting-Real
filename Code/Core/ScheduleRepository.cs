@@ -51,7 +51,30 @@ namespace Core {
 		}
 
 		public void SaveSchedule(Schedule Schedule) {
+			Dictionary<string, string> Params = new Dictionary<string, string>();
+			Params.Add("@StartDate", Schedule.StartDate.ToString("YYYY-MM-DD hh:mm:ss"));
+			Params.Add("@FinishDate", Schedule.FinishDate.ToString("YYYY-MM-DDThh:mm:ss"));
+			Params.Add("@CustomerID", Schedule.Customer.ID.ToString());
 
+			var ScheduleReturn = DB.GetSP("usp_SaveSchedule", Params);
+
+			int ScheduleID = int.Parse(ScheduleReturn[0]["LastID"]);
+
+			foreach(Task Task in Schedule.Tasks) {
+				Params.Clear();
+				Params.Add("@ScheduleID", ScheduleID.ToString());
+				Params.Add("@Description", Task.Description);
+
+				DB.RunSP("usp_SaveTask", Params);
+			}
+
+			foreach(Employee Emp in Schedule.Employees) {
+				Params.Clear();
+				Params.Add("@ScheduleID", ScheduleID.ToString());
+				Params.Add("@EmployeeID", Emp.ID.ToString());
+
+				DB.RunSP("usp_SaveScheduleEmployee", Params);
+			}
 		}
 	}
 }
