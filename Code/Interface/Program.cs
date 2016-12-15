@@ -35,12 +35,23 @@ namespace Interface {
 				string userInput = Console.ReadLine();
 				Console.Clear();
 
-				//try {
+				try {
 					RunSwitch(userInput);
-				//} catch (NotImplementedException) { // BEWARE: Can cause debugging issues :')
+				} //catch (NotImplementedException) { // BEWARE: Can cause debugging issues :')
 				//	Console.WriteLine("You accessed an unfinished section.");
 				//	Console.ReadKey();
 				//}
+				catch (Exception e){
+					Console.Clear();
+					Console.WriteLine("An exception was thrown in the program.");
+					Console.WriteLine("Please contact a system administrator.");
+
+					Console.WriteLine("\nException Message:\n" + e.Message);
+
+					while(true) { // This needs to be handled very very differently :)
+						Console.ReadKey();
+					}
+				}
 			}
 		}
 
