@@ -87,7 +87,7 @@ namespace Interface {
 				case "2": EUI.ShowEmployees(); break;
 				case "3": CUI.UpdateCustomerDatabase(); break;
 				case "4": EUI.UpdateEmployeeDatabase(); break;
-				case "5": throw new NotImplementedException();  break;
+				case "5": SUI.SeeSchedule();  break;
 
 				case "0": ProgramRunning = false; break;
 

@@ -21,5 +21,13 @@ namespace Core {
 			this.Customer = customer;
 			this.Employees = employees;
 		}
+
+		public Schedule(DateTime startDate, DateTime finishDate, List<Task> tasks, Customer customer, List<Employee> employees) {
+			this.StartDate = startDate;
+			this.FinishDate = finishDate;
+			this.Tasks = tasks;
+			this.Customer = customer;
+			this.Employees = employees;
+		}
 	}
 }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Core {
-	class ScheduleRepository {
+	public class ScheduleRepository {
 		private Dictionary<int, Schedule> Schedules = new Dictionary<int, Schedule>();
 		private Database DB = new Database();
 		private EmployeeRepository RepoEmp = new EmployeeRepository();

@@ -13,5 +13,9 @@ namespace Core {
 			this.ID = id;
 			this.Description = description;
 		}
+
+		public Task(string description) {
+			this.Description = description;
+		}
 	}
 }
