@@ -9,10 +9,10 @@ namespace Core {
         Database DB = new Database();
 
 		public Employee Login(string Username, string Password) {
-			var Employees = GetEmployees();	// Get All Employees
+			var Employees = GetEmployees();				// Get All Employees
 
-			if(!Employees.Any()) { // If No employees in repo, throw exception
-				throw new NoUserException(); // Custom Exception
+			if(!Employees.Any()) {						// If No employees in repo, throw exception
+				throw new NoUserException();			// * Custom Exception
 			}
 
 			foreach(Employee Emp in GetEmployees()) {	// Compare Employees
@@ -21,7 +21,7 @@ namespace Core {
 					return Emp;							// return that employee
 				}
 			}
-			throw new InvalidLoginException(); // Custom Exception
+			throw new InvalidLoginException();			// * Custom Exception
 		}
 
 		public List<Employee> GetEmployees() {
