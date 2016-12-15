@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Core {
-	class Schedule {
+	public class Schedule {
 		public int ID { get; set; }
 		public DateTime StartDate { get; set; }
 		public DateTime FinishDate { get; set; }
@@ -13,7 +13,7 @@ namespace Core {
 		public Customer Customer { get; set; }
 		public List<Employee> Employees { get; set; }
 
-		Schedule(int id, DateTime startDate, DateTime finishDate, List<Task> tasks, Customer customer, List<Employee> employees) {
+		public Schedule(int id, DateTime startDate, DateTime finishDate, List<Task> tasks, Customer customer, List<Employee> employees) {
 			this.ID = id;
 			this.StartDate = startDate;
 			this.FinishDate = finishDate;

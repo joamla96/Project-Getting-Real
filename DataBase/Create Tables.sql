@@ -1,8 +1,8 @@
-	DROP TABLE Employee;
-	DROP TABLE Customer;
-	DROP TABLE Task;
-	DROP TABLE Schedule;
-	DROP TABLE Schedule_Employees;
+DROP TABLE Schedule_Employees;
+DROP TABLE Task;
+DROP TABLE Schedule;
+DROP TABLE Customer;
+DROP TABLE Employee;
 
 CREATE TABLE Employee (
 	ID				INT				NOT NULL IDENTITY (1,1),
@@ -38,12 +38,6 @@ CONSTRAINT Customer_PK PRIMARY KEY (ID)
 );
 
 
-CREATE TABLE Task (
-	ID					INT				NOT NULL IDENTITY (1,1),
-	Description		NVARCHAR(MAX)	NOT NULL,
-CONSTRAINT Task_PK PRIMARY KEY (ID)
-);
-
 CREATE TABLE Schedule (
 	ID				INT				NOT NULL IDENTITY (1,1),
 	StartDate		DATETIME2		NOT NULL,
@@ -52,6 +46,15 @@ CREATE TABLE Schedule (
 CONSTRAINT	schedule_PK PRIMARY KEY (ID),
 CONSTRAINT	scheCust_FK	FOREIGN KEY (CustomerID)
 			REFERENCES Customer(ID)
+);
+
+CREATE TABLE Task (
+	ID				INT				NOT NULL IDENTITY (1,1),
+	ScheduleID		INT				NOT NULL,
+	Description		NVARCHAR(MAX)	NOT NULL,
+CONSTRAINT Task_PK PRIMARY KEY (ID),
+CONSTRAINT TskSch_FK FOREIGN KEY (ScheduleID)
+			REFERENCES Schedule(ID)
 );
 
 CREATE TABLE Schedule_Employees (
