@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security;
 
 namespace Core {
 	public class EmployeeRepository {
@@ -10,19 +9,19 @@ namespace Core {
         Database DB = new Database();
 
 		public Employee Login(string Username, string Password) {
-			var Employees = GetEmployees();
+			var Employees = GetEmployees();	// Get All Employees
 
-			if(!Employees.Any()) {
-				throw new NoUserException();
+			if(!Employees.Any()) { // If No employees in repo, throw exception
+				throw new NoUserException(); // Custom Exception
 			}
 
-			foreach(Employee Emp in GetEmployees()) {
-				if (Emp.Email == Username
-				&&	Emp.Password == Password) {
-					return Emp;
+			foreach(Employee Emp in GetEmployees()) {	// Compare Employees
+				if (Emp.Email == Username				// If a user in repo is found
+				&&	Emp.Password == Password) {			// with the login credentials inputted
+					return Emp;							// return that employee
 				}
 			}
-			throw new InvalidLoginException();
+			throw new InvalidLoginException(); // Custom Exception
 		}
 
 		public List<Employee> GetEmployees() {
