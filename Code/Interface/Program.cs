@@ -8,6 +8,7 @@ namespace Interface {
 	internal class Program {
 		Dictionary<int, string> CB = new Dictionary<int, string>(); // Console Buffer
 		Employee LoggedIn;
+		bool ProgramRunning;
 
 		EmployeeRepository RepoEmp = new EmployeeRepository();
 		CustomerRepository RepoCus = new CustomerRepository();
@@ -17,7 +18,8 @@ namespace Interface {
 		}
 
 		internal void Run() {
-			while (true) {
+			ProgramRunning = true;
+			while (ProgramRunning) {
 				while (LoggedIn == null) {
 					Login();
 				}
@@ -73,7 +75,7 @@ namespace Interface {
 				case "3": CUI.UpdateCustomerDatabase(); break;
 				case "4": EUI.UpdateEmployeeDatabase(); break;
 
-				case "0": Environment.Exit(0); break;
+				case "0": ProgramRunning = false; break;
 
 				default:
 					Console.WriteLine("Incorrect Input");
@@ -119,7 +121,7 @@ namespace Interface {
 		}
 
 		internal string GetPassword() { // Thanks StackOverflow: http://stackoverflow.com/questions/3404421/password-masking-console-application
-			string pwd = "";
+			string pwd = "";			// Edited to remove securestring because securestring is difficult too difficult to work with.
 			while (true) {
 				ConsoleKeyInfo i = Console.ReadKey(true);
 				if (i.Key == ConsoleKey.Enter) {
