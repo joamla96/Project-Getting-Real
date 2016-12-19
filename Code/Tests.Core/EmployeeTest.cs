@@ -121,7 +121,7 @@ namespace Tests.Core {
         [TestCleanup]
         public void ClearDatabase()
         {
-            DB.RunSP("usp_TruncateEmployees");
+           // DB.RunSP("usp_TruncateEmployees");
         }
     }
 }

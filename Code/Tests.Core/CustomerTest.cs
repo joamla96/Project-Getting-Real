@@ -67,7 +67,7 @@ namespace Tests.Core
 
 		[TestCleanup]
 		public void ClearDatabase() {
-			DB.RunSP("usp_TruncateCustomers");
+			//DB.RunSP("usp_TruncateCustomers");
 		}
     }
 }
