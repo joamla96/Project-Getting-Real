@@ -53,7 +53,6 @@ namespace Core {
 				Conn.Close();
 				return Result;
 			}
-
 		}
 	}
 }
