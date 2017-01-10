@@ -4,36 +4,19 @@
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>640</x>
-      <y>80</y>
-      <w>190</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>EmployeeSchedule
---
-TaskId
-Date
-StartingTime
-ClosingTime
-valign=top
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLState</id>
-    <coordinates>
       <x>30</x>
-      <y>80</y>
+      <y>90</y>
       <w>180</w>
       <h>160</h>
     </coordinates>
     <panel_attributes>Customer
 --
-CustomerId
-CustomerName
-CustomerAddress
-CustomerPhone
-CustomerEmail
+ID
+Firstname
+Lastname
+Address
+Phone
+Email
 valign=top
 </panel_attributes>
     <additional_attributes/>
@@ -42,62 +25,50 @@ valign=top
     <id>Relation</id>
     <coordinates>
       <x>200</x>
-      <y>120</y>
+      <y>130</y>
       <w>130</w>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=-
 m2=0..n
-m1=1..1
+m1=1..n
 </panel_attributes>
     <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>940</x>
-      <y>80</y>
+      <x>700</x>
+      <y>90</y>
       <w>190</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>Employee
 --
-EmployeeId
-EmployeeName
-EmployeeAddress
-EmployeePhone
-EmployeeEmail
+ID
+Firstname
+Lastname
+Phone
+Email
 valign=top
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>820</x>
-      <y>120</y>
-      <w>140</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>lt=-
-m2=1..n
-m1=1..n
-</panel_attributes>
-    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLState</id>
     <coordinates>
       <x>310</x>
-      <y>80</y>
+      <y>90</y>
       <w>250</w>
       <h>120</h>
     </coordinates>
-    <panel_attributes>Service
+    <panel_attributes>Schedule
 --
-ServiceId
-ServiceType(Client, Business)
-ServiceDescription
+ID
+StartDate
+FinishDate
+
+
 valign=top
 </panel_attributes>
     <additional_attributes/>
@@ -106,14 +77,46 @@ valign=top
     <id>Relation</id>
     <coordinates>
       <x>550</x>
-      <y>120</y>
-      <w>110</w>
+      <y>130</y>
+      <w>170</w>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=-
 m2=1..n
 m1=1..n
 </panel_attributes>
-    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>310</x>
+      <y>290</y>
+      <w>250</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Task
+--
+ID
+Description
+
+
+valign=top
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>200</y>
+      <w>50</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=1..n
+m1=1
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
   </element>
 </diagram>
